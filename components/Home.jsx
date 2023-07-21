@@ -1,13 +1,21 @@
 import React from 'react'
 import {View,Text,Stylesheet,TextInput} from "react-native"
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import Subject from "../screens/Subject"
+import Topic from "../screens/Topic"
+
+    const Drawer = createDrawerNavigator();
 
 function Home() {
   return (
-    <View>
-      <Text>Home</Text>
-      <TextInput />
-      <TextInput />
-    </View>
+ 
+    <Drawer.Navigator>
+    <Drawer.Screen name="Subject" component={Subject} />
+    <Drawer.Screen name="Topic" component={Topic} />
+  </Drawer.Navigator>
+
+    
   )
 }
 
