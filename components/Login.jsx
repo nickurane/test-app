@@ -19,7 +19,7 @@ function Login({navigation,route}) {
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      navigation.replace('Home')
+      navigation.navigate('Home')
       // ...
     })
     .catch((error) => {
@@ -37,7 +37,7 @@ function Login({navigation,route}) {
     // Signed in 
     const user = userCredential.user;
    
-    navigation.replace('Home')
+    navigation.navigate('Home')
     // ...
   })
   .catch((error) => {
