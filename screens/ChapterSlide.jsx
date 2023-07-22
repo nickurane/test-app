@@ -1,5 +1,6 @@
 import React from 'react'
 import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
+import Question from './Question'
 
 const ChapterSlide= ({item,navigation}) => {
     console.log(item)
@@ -8,7 +9,10 @@ const ChapterSlide= ({item,navigation}) => {
   return (
     <TouchableOpacity style={[styles.slideContainer,{backgroundColor:item.id%2?'#5a228b':'#dae7e6'}]}
     
-    onPress={()=>{}}
+    onPress={()=>{
+
+      navigation.navigate("Question")
+    }}
     
     
     
