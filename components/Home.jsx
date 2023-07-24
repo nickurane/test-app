@@ -1,6 +1,6 @@
 import React from 'react'
 import {View,Text,Stylesheet,TextInput} from "react-native"
-import { createDrawerNavigator } from '@react-navigation/drawer';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -16,12 +16,7 @@ import Question from '../screens/Question';
 function Home() {
   return (
  
-  //  <Drawer.Navigator>
-  //   <Drawer.Screen name="Semester" component={Sem} />
-  //   <Drawer.Screen name="Subject" component={Subject} />
-  //   <Drawer.Screen name="Topic" component={Topic} />
-
-  // </Drawer.Navigator>
+ 
  
  
      <Stack.Navigator initialRouteName='Semester'
@@ -33,7 +28,7 @@ function Home() {
     <Stack.Screen name="Topic" component={Topic} />
     <Stack.Screen name="Semester" component={Sem} />
     <Stack.Screen name="Chapter" component={Chapter} />
-    <Stack.Screen name="Questions" component={Question} />
+    <Stack.Screen name="Question" component={Question} />
  </Stack.Navigator>
 
 

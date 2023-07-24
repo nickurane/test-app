@@ -1,42 +1,39 @@
 import React from 'react'
 import {View,Text,FlatList,StyleSheet} from "react-native"
 import {question} from "./data"
-import Slide from './Slide'
-import QuestionSlide from './QuestionSlide'
-
-
-const Question= ({navigation}) => {
+import QuestionSlide from './QuestionSlide';
 
 
 
 
-  const renderItem = ({ item }) => {
-    return <QuestionSlide item={item} navigation={navigation} />;
+const Question= () => {
+
+
+
+
+  const renderItem1 = ({ item }) => {
+    return <QuestionSlide item={item} navigation={navigation} />
   };
 
   return (
+    <View style={{flex:1}}>
     <View>
-    <View>
-    <Text>Semester</Text>
+    <Text>Questions</Text>
     </View>
     <FlatList
       data={question}
-      renderItem={renderItem}
+      renderItem={renderItem1}
       keyExtractor={(item) => item.id}
-      style={styles.semContainer}
+    
       
-      numColumns={2}
+      numColumns={1}
     />
  
   </View>
   )
 }
 const styles=StyleSheet.create({
-    semContainer:{
-      flex:1,
-      flexWrap:'wrap',
-      
-    }
+
   
   })
 

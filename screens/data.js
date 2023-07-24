@@ -391,224 +391,224 @@
 
     [
       {
-        "question_id": 1,
-        "question": "What is the output of the following C code?\n\n#include <stdio.h>\n\nint main() {\n  int x = 10;\n  int y = 5;\n  printf(\"%d\", x+++y);\n  return 0;\n}",
-        "options": {
-          "A": "15",
-          "B": "16",
-          "C": "11",
-          "D": "Error"
+       id: 1,
+        question: "What is the output of the following C code?\n\n#include <stdio.h>\n\nint main() {\n  int x = 10;\n  int y = 5;\n  printf(\"%d\", x+++y);\n  return 0;\n}",
+        options: {
+          A: "15",
+          B: "16",
+          C: "11",
+          D: "Error"
         },
-        "correct_option": "C"
+        correct_option: "C"
       },
       {
-        "question_id": 2,
-        "question": "Which data structure uses the Last In, First Out (LIFO) method for element access?",
-        "options": {
-          "A": "Queue",
-          "B": "Heap",
-          "C": "Stack",
-          "D": "Tree"
+       id: 2,
+        question: "Which data structure uses the Last In, First Out (LIFO) method for element access?",
+        options: {
+          A: "Queue",
+          B: "Heap",
+          C: "Stack",
+          D: "Tree"
         },
-        "correct_option": "C"
+        correct_option: "C"
       },
       {
-        "question_id": 3,
-        "question": "What is the time complexity of a linear search algorithm?",
-        "options": {
-          "A": "O(1)",
-          "B": "O(n)",
-          "C": "O(log n)",
-          "D": "O(n^2)"
+       id: 3,
+        question: "What is the time complexity of a linear search algorithm?",
+        options: {
+          A: "O(1)",
+          B: "O(n)",
+          C: "O(log n)",
+          D: "O(n^2)"
         },
-        "correct_option": "B"
+        correct_option: "B"
       },
       {
-        "question_id": 4,
-        "question": "In Python, what is the correct way to open and read a file 'data.txt'?",
-        "options": {
-          "A": "file = open('data.txt', 'r')",
-          "B": "file = open('data.txt')",
-          "C": "file = read('data.txt', 'r')",
-          "D": "file = read('data.txt')"
+       id: 4,
+        question: "In Python, what is the correct way to open and read a file 'data.txt'?",
+        options: {
+          A: "file = open('data.txt', 'r')",
+          B: "file = open('data.txt')",
+          C: "file = read('data.txt', 'r')",
+          D: "file = read('data.txt')"
         },
-        "correct_option": "A"
+        correct_option: "A"
       },
       {
-        "question_id": 5,
-        "question": "What does CSS stand for in web development?",
-        "options": {
-          "A": "Computer Style Sheets",
-          "B": "Cascading Style Sheets",
-          "C": "Creative Style Sheets",
-          "D": "Cascading Sheet Styles"
+       id: 5,
+        question: "What does CSS stand for in web development?",
+        options: {
+          A: "Computer Style Sheets",
+          B: "Cascading Style Sheets",
+          C: "Creative Style Sheets",
+          D: "Cascading Sheet Styles"
         },
-        "correct_option": "B"
+        correct_option: "B"
       },
       {
-        "question_id": 6,
-        "question": "Which programming language is often called the 'mother of all languages'?",
-        "options": {
-          "A": "C++",
-          "B": "Java",
-          "C": "Assembly",
-          "D": "Fortran"
+       id: 6,
+        question: "Which programming language is often called the 'mother of all languages'?",
+        options: {
+          A: "C++",
+          B: "Java",
+          C: "Assembly",
+          D: "Fortran"
         },
-        "correct_option": "C"
+        correct_option: "C"
       },
       {
-        "question_id": 7,
-        "question": "What is the correct syntax to declare an array in JavaScript?",
-        "options": {
-          "A": "var arr = []",
-          "B": "int arr[]",
-          "C": "array arr[]",
-          "D": "var arr = new Array()"
+       id: 7,
+        question: "What is the correct syntax to declare an array in JavaScript?",
+        options: {
+          A: "var arr = []",
+          B: "int arr[]",
+          C: "array arr[]",
+          D: "var arr = new Array()"
         },
-        "correct_option": "A"
+        correct_option: "A"
       },
       {
-        "question_id": 8,
-        "question": "Which sorting algorithm has the best average and worst-case time complexity?",
-        "options": {
-          "A": "Bubble Sort",
-          "B": "Insertion Sort",
-          "C": "Merge Sort",
-          "D": "Quick Sort"
+       id: 8,
+        question: "Which sorting algorithm has the best average and worst-case time complexity?",
+        options: {
+          A: "Bubble Sort",
+          B: "Insertion Sort",
+          C: "Merge Sort",
+          D: "Quick Sort"
         },
-        "correct_option": "C"
+        correct_option: "C"
       },
       {
-        "question_id": 9,
-        "question": "What does the 'volatile' keyword mean in C/C++?",
-        "options": {
-          "A": "The variable's value cannot be changed.",
-          "B": "The variable is stored in the CPU registers.",
-          "C": "The variable's value may change at any time.",
-          "D": "The variable is passed by reference."
+       id: 9,
+        question: "What does the 'volatile' keyword mean in C/C++?",
+        options: {
+          A: "The variable's value cannot be changed.",
+          B: "The variable is stored in the CPU registers.",
+          C: "The variable's value may change at any time.",
+          D: "The variable is passed by reference."
         },
-        "correct_option": "C"
+        correct_option: "C"
       },
       {
-        "question_id": 10,
-        "question": "Which of the following is not a valid JavaScript data type?",
-        "options": {
-          "A": "Boolean",
-          "B": "String",
-          "C": "Symbol",
-          "D": "Float"
+       id: 10,
+        question: "Which of the following is not a valid JavaScript data type?",
+        options: {
+          A: "Boolean",
+          B: "String",
+          C: "Symbol",
+          D: "Float"
         },
-        "correct_option": "D"
+        correct_option: "D"
       },
       {
-        "question_id": 11,
-        "question": "What is the purpose of the 'finally' block in a try-catch-finally statement?",
-        "options": {
-          "A": "It contains the code that is always executed regardless of whether an exception occurred.",
-          "B": "It is used to catch exceptions.",
-          "C": "It contains the main logic of the program.",
-          "D": "It is used to define custom exceptions."
+       id: 11,
+        question: "What is the purpose of the 'finally' block in a try-catch-finally statement?",
+        options: {
+          A: "It contains the code that is always executed regardless of whether an exception occurred.",
+          B: "It is used to catch exceptions.",
+          C: "It contains the main logic of the program.",
+          D: "It is used to define custom exceptions."
         },
-        "correct_option": "A"
+        correct_option: "A"
       },
       {
-        "question_id": 12,
-        "question": "Which operator is used to allocate memory dynamically in C++?",
-        "options": {
-          "A": "malloc",
-          "B": "alloc",
-          "C": "new",
-          "D": "allocate"
+       id: 12,
+        question: "Which operator is used to allocate memory dynamically in C++?",
+        options: {
+          A: "malloc",
+          B: "alloc",
+          C: "new",
+          D: "allocate"
         },
-        "correct_option": "C"
+        correct_option: "C"
       },
       {
-        "question_id": 13,
-        "question": "What does SQL stand for?",
-        "options": {
-          "A": "Structured Query Language",
-          "B": "Sequential Query Language",
-          "C": "Simple Query Language",
-          "D": "Standard Query Language"
+       id: 13,
+        question: "What does SQL stand for?",
+        options: {
+          A: "Structured Query Language",
+          B: "Sequential Query Language",
+          C: "Simple Query Language",
+          D: "Standard Query Language"
         },
-        "correct_option": "A"
+        correct_option: "A"
       },
       {
-        "question_id": 14,
-        "question": "What is the result of the following Python code?\n\nx = [1, 2, 3]\nprint(x * 3)",
-        "options": {
-          "A": "[1, 2, 3]",
-          "B": "[1, 2, 3, 1, 2, 3, 1, 2, 3]",
-          "C": "[3, 2, 1]",
-          "D": "Error"
+       id: 14,
+        question: "What is the result of the following Python code?\n\nx = [1, 2, 3]\nprint(x * 3)",
+        options: {
+          A: "[1, 2, 3]",
+          B: "[1, 2, 3, 1, 2, 3, 1, 2, 3]",
+          C: "[3, 2, 1]",
+          D: "Error"
         },
-        "correct_option": "B"
+        correct_option: "B"
       },
       {
-        "question_id": 15,
-        "question": "Which of the following is a valid Java method declaration?",
-        "options": {
-          "A": "public int sum(a, b) { return a + b; }",
-          "B": "int sum(int a, int b) { return a + b; }",
-          "C": "int sum(int a, b) { return a + b; }",
-          "D": "public sum(int a, int b) { return a + b; }"
+       id: 15,
+        question: "Which of the following is a valid Java method declaration?",
+        options: {
+          A: "public int sum(a, b) { return a + b; }",
+          B: "int sum(int a, int b) { return a + b; }",
+          C: "int sum(int a, b) { return a + b; }",
+          D: "public sum(int a, int b) { return a + b; }"
         },
-        "correct_option": "B"
+        correct_option: "B"
       },
       {
-        "question_id": 16,
-        "question": "In Python, what is the correct way to open and write to a file 'data.txt'?",
-        "options": {
-          "A": "file = open('data.txt', 'w')",
-          "B": "file = open('data.txt', 'r')",
-          "C": "file = write('data.txt')",
-          "D": "file = read('data.txt', 'w')"
+       id: 16,
+        question: "In Python, what is the correct way to open and write to a file 'data.txt'?",
+        options: {
+          A: "file = open('data.txt', 'w')",
+          B: "file = open('data.txt', 'r')",
+          C: "file = write('data.txt')",
+          D: "file = read('data.txt', 'w')"
         },
-        "correct_option": "A"
+        correct_option: "A"
       },
       {
-        "question_id": 17,
-        "question": "Which data structure is used in a Depth-First Search (DFS) algorithm?",
-        "options": {
-          "A": "Queue",
-          "B": "Stack",
-          "C": "Heap",
-          "D": "Tree"
+       id: 17,
+        question: "Which data structure is used in a Depth-First Search (DFS) algorithm?",
+        options: {
+          A: "Queue",
+          B: "Stack",
+          C: "Heap",
+          D: "Tree"
         },
-        "correct_option": "B"
+        correct_option: "B"
       },
       {
-        "question_id": 18,
-        "question": "What does HTML stand for?",
-        "options": {
-          "A": "Hyper Text Markup Language",
-          "B": "High-level Text Machine Language",
-          "C": "Hyperlinks and Text Markup Language",
-          "D": "Home Tool Markup Language"
+       id: 18,
+        question: "What does HTML stand for?",
+        options: {
+          A: "Hyper Text Markup Language",
+          B: "High-level Text Machine Language",
+          C: "Hyperlinks and Text Markup Language",
+          D: "Home Tool Markup Language"
         },
-        "correct_option": "A"
+        correct_option: "A"
       },
       {
-        "question_id": 19,
-        "question": "In C++, what is the correct way to delete a dynamically allocated object?",
-        "options": {
-          "A": "delete object;",
-          "B": "delete object();",
-          "C": "delete[] object;",
-          "D": "free(object);"
+       id: 19,
+        question: "In C++, what is the correct way to delete a dynamically allocated object?",
+        options: {
+          A: "delete object;",
+          B: "delete object();",
+          C: "delete[] object;",
+          D: "free(object);"
         },
-        "correct_option": "A"
+        correct_option: "A"
       },
       {
-        "question_id": 20,
-        "question": "What is the result of the following code snippet?\n\nint x = 5;\nint y = x++ + ++x;\nprintf(\"%d\", y);",
-        "options": {
-          "A": "10",
-          "B": "11",
-          "C": "12",
-          "D": "13"
+       id: 20,
+        question: "What is the result of the following code snippet?\n\nint x = 5;\nint y = x++ + ++x;\nprintf(\"%d\", y);",
+        options: {
+          A: "10",
+          B: "11",
+          C: "12",
+          D: "13"
         },
-        "correct_option": "D"
+        correct_option: "D"
       }
     ]
     
