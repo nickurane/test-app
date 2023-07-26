@@ -23,7 +23,7 @@ const Sem = ({navigation}) => {
       data={semDetails}
       renderItem={renderItem}
       keyExtractor={(item) => item.id}
-      style={styles.semContainer}
+     
       
       numColumns={2}
     />

@@ -20,7 +20,7 @@ const Subject = ({navigation}) => {
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
-        style={styles. subjectContainer}
+       
       
         numColumns={2}
       />

@@ -399,7 +399,7 @@
           C: "11",
           D: "Error"
         },
-        correct_option: "C"
+        correct_option:"Error"
       },
       {
        id: 2,
@@ -410,7 +410,7 @@
           C: "Stack",
           D: "Tree"
         },
-        correct_option: "C"
+        correct_option: "Stack"
       },
       {
        id: 3,
@@ -421,7 +421,7 @@
           C: "O(log n)",
           D: "O(n^2)"
         },
-        correct_option: "B"
+        correct_option: "O(n)"
       },
       {
        id: 4,
@@ -432,7 +432,7 @@
           C: "file = read('data.txt', 'r')",
           D: "file = read('data.txt')"
         },
-        correct_option: "A"
+        correct_option: "file = open('data.txt', 'r')"
       },
       {
        id: 5,
@@ -443,7 +443,7 @@
           C: "Creative Style Sheets",
           D: "Cascading Sheet Styles"
         },
-        correct_option: "B"
+        correct_option:"Cascading Style Sheets"
       },
       {
        id: 6,
@@ -454,7 +454,7 @@
           C: "Assembly",
           D: "Fortran"
         },
-        correct_option: "C"
+        correct_option: "Assembly"
       },
       {
        id: 7,
@@ -465,7 +465,7 @@
           C: "array arr[]",
           D: "var arr = new Array()"
         },
-        correct_option: "A"
+        correct_option: "var arr = []"
       },
       {
        id: 8,
@@ -476,7 +476,7 @@
           C: "Merge Sort",
           D: "Quick Sort"
         },
-        correct_option: "C"
+        correct_option: "Merge Sort"
       },
       {
        id: 9,
@@ -487,7 +487,7 @@
           C: "The variable's value may change at any time.",
           D: "The variable is passed by reference."
         },
-        correct_option: "C"
+        correct_option: "The variable's value may change at any time."
       },
       {
        id: 10,
@@ -498,7 +498,7 @@
           C: "Symbol",
           D: "Float"
         },
-        correct_option: "D"
+        correct_option: "Float"
       },
       {
        id: 11,
@@ -509,7 +509,7 @@
           C: "It contains the main logic of the program.",
           D: "It is used to define custom exceptions."
         },
-        correct_option: "A"
+        correct_option: "It contains the code that is always executed regardless of whether an exception occurred."
       },
       {
        id: 12,
@@ -520,7 +520,7 @@
           C: "new",
           D: "allocate"
         },
-        correct_option: "C"
+        correct_option: "new"
       },
       {
        id: 13,
@@ -531,7 +531,7 @@
           C: "Simple Query Language",
           D: "Standard Query Language"
         },
-        correct_option: "A"
+        correct_option:"Structured Query Language"
       },
       {
        id: 14,
@@ -542,7 +542,7 @@
           C: "[3, 2, 1]",
           D: "Error"
         },
-        correct_option: "B"
+        correct_option:"[1, 2, 3, 1, 2, 3, 1, 2, 3]"
       },
       {
        id: 15,
@@ -553,7 +553,7 @@
           C: "int sum(int a, b) { return a + b; }",
           D: "public sum(int a, int b) { return a + b; }"
         },
-        correct_option: "B"
+        correct_option:  "int sum(int a, int b) { return a + b; }"
       },
       {
        id: 16,
@@ -564,7 +564,7 @@
           C: "file = write('data.txt')",
           D: "file = read('data.txt', 'w')"
         },
-        correct_option: "A"
+        correct_option:  "file = open('data.txt', 'w')"
       },
       {
        id: 17,
@@ -575,7 +575,7 @@
           C: "Heap",
           D: "Tree"
         },
-        correct_option: "B"
+        correct_option: "Stack"
       },
       {
        id: 18,
@@ -586,7 +586,7 @@
           C: "Hyperlinks and Text Markup Language",
           D: "Home Tool Markup Language"
         },
-        correct_option: "A"
+        correct_option:"Hyper Text Markup Language"
       },
       {
        id: 19,
@@ -597,7 +597,7 @@
           C: "delete[] object;",
           D: "free(object);"
         },
-        correct_option: "A"
+        correct_option: "delete object;"
       },
       {
        id: 20,
@@ -608,7 +608,7 @@
           C: "12",
           D: "13"
         },
-        correct_option: "D"
+        correct_option: "13"
       }
     ]
     

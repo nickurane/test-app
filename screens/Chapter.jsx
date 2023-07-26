@@ -1,7 +1,7 @@
 import React from 'react'
 import {View,Text,FlatList,StyleSheet} from "react-native"
 import {data} from "./data"
-import ChapterSlide from './chapterSlide';
+import ChapterSlide from './ChapterSlide';
 
 
 
