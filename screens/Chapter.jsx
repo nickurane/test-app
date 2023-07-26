@@ -1,16 +1,16 @@
 import React from 'react'
 import {View,Text,FlatList,StyleSheet} from "react-native"
 import {data} from "./data"
-import ChapterSlide from './chapterSlide';
+import ChapterSlide from './ChapterSlide';
 
 
 
 
 const Chapter = ({navigation}) => {
-
+  console.log("navigation",navigation)
 
   const renderItem = ({ item }) => {
-    return <ChapterSlide item={item} navigation={navigation} />;
+    return <ChapterSlide item={item} navigation={navigation} />
   };
 
 

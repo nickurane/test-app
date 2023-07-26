@@ -16,14 +16,16 @@ const Subject = ({navigation}) => {
       <View>
       <Text>Subject</Text>
       </View>
+      {/* <View style={styles.subjectContainer}> */}
       <FlatList
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
-        style={styles. subjectContainer}
+        
       
         numColumns={2}
       />
+      {/* </View> */}
    
     </View>
   )
