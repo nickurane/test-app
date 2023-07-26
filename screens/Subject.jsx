@@ -21,7 +21,11 @@ const Subject = ({navigation}) => {
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+<<<<<<< HEAD
         
+=======
+       
+>>>>>>> 76fc91e4e458fce87db915fbf74c26131ecd9f35
       
         numColumns={2}
       />
