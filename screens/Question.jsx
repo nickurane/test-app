@@ -20,9 +20,9 @@ const [wrongAnswer,setWrongAnswer]=useState(0)
 
   return (
     <View style={{flex:1}}>
-    <View>
-    <Text>Correct Answered:{correctAnswer}</Text>
-    <Text>Wrong Answered:{wrongAnswer}</Text>
+    <View style={styles.scoreContainer}>
+    <Text>Correct Answered:  {correctAnswer}</Text>
+    <Text>Wrong Answered:   {wrongAnswer}</Text>
     </View>
     <FlatList
       data={question}
@@ -37,6 +37,19 @@ const [wrongAnswer,setWrongAnswer]=useState(0)
   )
 }
 const styles=StyleSheet.create({
+  scoreContainer:{
+    margin:10,
+    borderColor:'black',
+    padding:10,
+    borderRadius:20,
+    borderWidth:1,
+    height:90,
+    display:'flex',
+    justifyContent:'space-between',
+    alignItems:'center',
+    flexDirection:'row',
+    paddingHorizontal:35,
+  }
 
   
   })
