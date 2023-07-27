@@ -1,11 +1,29 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import {View,Text,FlatList,StyleSheet} from "react-native"
 import Slide from "./Slide"
-import {data} from "./data"
 
-const Subject = ({navigation}) => {
+import {getSubjects} from "../components/firestore"
+
+const Subject = ({navigation,route}) => {
 
 
+  const [subjects,setSubjects]=useState([])
+
+   console.log(route.params.id)
+  const getData=async ()=>{
+    let s= await getSubjects()
+    console.log("subject:",s);
+    setSubjects(s)
+   
+  }
+ 
+ 
+  useEffect(()=>{
+  getData()
+   
+  },[])
+
+  
   const renderItem = ({ item }) => {
     return <Slide item={item} navigation={navigation} />;
   };
@@ -18,14 +36,10 @@ const Subject = ({navigation}) => {
       </View>
       {/* <View style={styles.subjectContainer}> */}
       <FlatList
-        data={data}
+        data={subjects}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
-<<<<<<< HEAD
-        
-=======
-       
->>>>>>> 76fc91e4e458fce87db915fbf74c26131ecd9f35
+
       
         numColumns={2}
       />

@@ -30,21 +30,17 @@ const Sem = ({navigation}) => {
   };
 
   return (
+    <View style={styles.semContainer}>
     <View>
-    <View>
-    <Text>Semester hi </Text>
+    <Text>Semester </Text>
     </View>
     <View>
     {semester?
     <FlatList
-      data={semDetails}
+      data={semester}
       renderItem={renderItem}
       keyExtractor={(item) => item.id}
-<<<<<<< HEAD
-      
-=======
-     
->>>>>>> 76fc91e4e458fce87db915fbf74c26131ecd9f35
+
       
       numColumns={2}
     />:<> <h1>data not found</h1> </>}
@@ -57,7 +53,8 @@ const styles=StyleSheet.create({
     semContainer:{
       flex:1,
       flexWrap:'wrap',
-      height:300,
+      margin:5,
+     
       
     }
   

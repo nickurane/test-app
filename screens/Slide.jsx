@@ -6,7 +6,7 @@ const Slide = ({item,navigation}) => {
     
    
   return (
-    <TouchableOpacity style={[styles.slideContainer,{backgroundColor:item.id%2?'#5a228b':'#dae7e6'}]}
+    <TouchableOpacity style={[styles.slideContainer,{backgroundColor:'#5b238c'}]}
     
     onPress={()=>{navigation.navigate("Chapter")}}
     
@@ -28,7 +28,8 @@ const styles=StyleSheet.create({
         backgroundColor:'blue',
         height:150,
         margin:2,
-
+        justifyContent:'center',
+        alignItems:'center'
     }
 })
 export default Slide
