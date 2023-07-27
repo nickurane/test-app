@@ -1,4 +1,4 @@
-import { collection, getFirestore, getDocs } from "firebase/firestore";
+import { collection, getFirestore,getDocs,query,where,onSnapshot,getDoc,collectionGroup } from "firebase/firestore";
 
 const setUp = async () => {
   let sem = [];
@@ -21,4 +21,22 @@ const setUp = async () => {
   }
 };
 
-export { setUp };
+const getSubjects = async (id) => {
+  const db = getFirestore();
+  const  postsQuery  = collectionGroup(db, "subject",where("id", "==", id));
+  let subjects = [];
+  const querySnapshot=await getDocs(postsQuery)
+   querySnapshot.forEach((doc) => {
+        // doc.data() returns the data of the document
+        subjects.push({ id: doc.id, ...doc.data() });
+       
+    
+     
+
+    })
+    return subjects;
+   
+};
+
+
+export { setUp ,getSubjects};
