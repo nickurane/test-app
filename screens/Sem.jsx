@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import {View,Text,FlatList,StyleSheet} from "react-native"
+
 import {semDetails} from "./data"
-import Slide from './Slide'
+import { setUp } from '../components/firestore'
 import SemSlide from './SemSlide'
-import Subject from './Subject'
+
 
 const Sem = ({navigation}) => {
 
+  const [semester,setSem]=useState([])
 
 
+  const getData=async ()=>{
+    let s=await setUp()
+    setSem(s)
+    console.log(semester);
+  }
+ 
+ 
+  useEffect(()=>{
+  getData()
+   
+  },[])
+
+ console.log(semester)
 
   const renderItem = ({ item }) => {
     return < SemSlide item={item} navigation={navigation} />;
@@ -17,17 +32,24 @@ const Sem = ({navigation}) => {
   return (
     <View>
     <View>
-    <Text>Semester</Text>
+    <Text>Semester hi </Text>
     </View>
+    <View>
+    {semester?
     <FlatList
       data={semDetails}
       renderItem={renderItem}
       keyExtractor={(item) => item.id}
+<<<<<<< HEAD
+      
+=======
      
+>>>>>>> 76fc91e4e458fce87db915fbf74c26131ecd9f35
       
       numColumns={2}
-    />
+    />:<> <h1>data not found</h1> </>}
  
+  </View>
   </View>
   )
 }
@@ -35,6 +57,7 @@ const styles=StyleSheet.create({
     semContainer:{
       flex:1,
       flexWrap:'wrap',
+      height:300,
       
     }
   

@@ -3,12 +3,13 @@ import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
 
 const SemSlide = ({item,navigation}) => {
   
+
     
   return (
    <TouchableOpacity 
    onPress={() => navigation.navigate("Subject")}
    
-   style={[styles.SemSlideContainer,{backgroundColor:item.id%2?'#5a228b':'#dae7e6'}]}>
+   style={[styles.SemSlideContainer,{backgroundColor:'#5a228b'}]}>
     <View >
       <Text>{item.id}</Text>
        <Text>{item.sem}</Text>
@@ -23,8 +24,10 @@ const styles=StyleSheet.create({
     SemSlideContainer:{
         flex:1,
         backgroundColor:'blue',
-        height:100,
+        height:300,
         margin:2,
+        justifyContent:'center',
+        alignItems:'center'
 
     }
 })

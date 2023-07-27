@@ -7,10 +7,10 @@ import ChapterSlide from './ChapterSlide';
 
 
 const Chapter = ({navigation}) => {
-
+  console.log("navigation",navigation)
 
   const renderItem = ({ item }) => {
-    return <ChapterSlide item={item} navigation={navigation} />;
+    return <ChapterSlide item={item} navigation={navigation} />
   };
 
 
