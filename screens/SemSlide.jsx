@@ -7,12 +7,11 @@ const SemSlide = ({item,navigation}) => {
     
   return (
    <TouchableOpacity 
-   onPress={() => navigation.navigate("Subject")}
+   onPress={() => navigation.navigate("Subject",{"id":item.id})}
    
-   style={[styles.SemSlideContainer,{backgroundColor:'#5a228b'}]}>
+   style={[styles.SemSlideContainer,{backgroundColor:'#5b238c'}]}>
     <View >
-      <Text>{item.id}</Text>
-       <Text>{item.sem}</Text>
+     <Text style={styles.headingTxt}>{item.sem} Sem</Text>
      </View>
     </TouchableOpacity>
 
@@ -24,11 +23,16 @@ const styles=StyleSheet.create({
     SemSlideContainer:{
         flex:1,
         backgroundColor:'blue',
-        height:300,
+        height:100,
         margin:2,
         justifyContent:'center',
         alignItems:'center'
 
+    }
+    ,headingTxt:{
+      color:'white',
+      fontWeight:'bold',
+      fontSize:15
     }
 })
 export default SemSlide

@@ -38,7 +38,7 @@ const [wrongAnswer,setWrongAnswer]=useState(0)
 }
 const styles=StyleSheet.create({
   scoreContainer:{
-    margin:10,
+     margin:10,
     borderColor:'black',
     padding:10,
     borderRadius:20,
@@ -49,6 +49,7 @@ const styles=StyleSheet.create({
     alignItems:'center',
     flexDirection:'row',
     paddingHorizontal:35,
+    backgroundColor:'#5b238c'
   }
 
   
