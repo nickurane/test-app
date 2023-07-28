@@ -21,12 +21,17 @@ const SemSlide = ({item,navigation}) => {
 
 const styles=StyleSheet.create({
     SemSlideContainer:{
-        flex:1,
-        backgroundColor:'blue',
-        height:100,
-        margin:2,
-        justifyContent:'center',
-        alignItems:'center'
+  
+  
+    
+     
+      flex:1,
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      height:100,
+      margin:1,
+
 
     }
     ,headingTxt:{

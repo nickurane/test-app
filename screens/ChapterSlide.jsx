@@ -8,7 +8,7 @@ const ChapterSlide= ({item,navigation}) => {
    
   return (
     <TouchableOpacity style={[styles.container,{backgroundColor:item.id%2?'#5a228b':'#dae7e6'}]}
-    onPress={()=>{navigation.navigate('Question')}} 
+    onPress={()=>{navigation.navigate('Concepts',{"id":item.id})}} 
     
     >
     <View style={styles.txtContainer} >
@@ -23,13 +23,14 @@ const ChapterSlide= ({item,navigation}) => {
 const styles=StyleSheet.create({
   container:{
     height:70,
-    margin:10,
+   
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
     flexDirection:'row'
   },
   txtContainer:{
+    
     display:'flex',
     flexDirection:'row',
     display:'flex',
@@ -41,7 +42,7 @@ const styles=StyleSheet.create({
   ,
   txt:{
     fontWeight:'bold',
-    fontSize:16,
+
     color:'white'
   }
 })

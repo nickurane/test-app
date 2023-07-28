@@ -40,10 +40,7 @@ const Subject = ({navigation,route}) => {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
 
-<<<<<<< HEAD
 
-=======
->>>>>>> d47e681ff22837a4f97d7eab7f02f7317302a0b7
       
         numColumns={2}
       />
@@ -57,6 +54,7 @@ const styles=StyleSheet.create({
   subjectContainer:{
     flex:1,
     flexWrap:'wrap',
+    backgroundColor:'green'
     
   }
 

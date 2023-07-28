@@ -9,6 +9,7 @@ import Topic from "../screens/Topic"
 import Sem from "../screens/Sem"
 import Chapter from "../screens/Chapter"
 import Question from '../screens/Question';
+import Concept from "../screens/Concepts"
 
     // const Drawer = createDrawerNavigator();
     const Stack = createNativeStackNavigator();
@@ -28,7 +29,9 @@ function Home() {
     <Stack.Screen name="Topic" component={Topic} />
     <Stack.Screen name="Semester" component={Sem} />
     <Stack.Screen name="Chapter" component={Chapter} />
+    <Stack.Screen name="Concepts" component={Concept} />
     <Stack.Screen name="Question" component={Question} />
+
  </Stack.Navigator>
 
 

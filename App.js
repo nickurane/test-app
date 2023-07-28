@@ -17,6 +17,7 @@ export default function App() {
 
 
   return (
+   
     <NavigationContainer>
     <Stack.Navigator initialRouteName='Login'
     screenOptions={{
@@ -35,6 +36,7 @@ export default function App() {
     <Stack.Screen name="Settings" component={Settings} /> */}
   </Stack.Navigator>
   </NavigationContainer>
+ 
   );
 }
 
@@ -44,5 +46,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+
   },
 });

@@ -37,6 +37,40 @@ const getSubjects = async (id) => {
     return subjects;
    
 };
+const getChapters = async (id) => {
+  const db = getFirestore();
+  const  postsQuery  = collectionGroup(db, "chapter",where("id", "==", id));
+  let chapters = [];
+  const querySnapshot=await getDocs(postsQuery)
+   querySnapshot.forEach((doc) => {
+        // doc.data() returns the data of the document
+        chapters.push({ id: doc.id, ...doc.data() });
+       
+    
+     
+
+    })
+    return chapters;
+   
+};
 
 
-export { setUp ,getSubjects};
+
+const getConcepts= async (id) => {
+  const db = getFirestore();
+  const  postsQuery  = collectionGroup(db, "concepts",where("id", "==", id));
+  let concepts = [];
+  const querySnapshot=await getDocs(postsQuery)
+   querySnapshot.forEach((doc) => {
+        // doc.data() returns the data of the document
+        concepts.push({ id: doc.id, ...doc.data() });
+       
+    
+     
+
+    })
+    return concepts;
+   
+};
+
+export { setUp ,getSubjects,getChapters,getConcepts};

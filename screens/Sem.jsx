@@ -23,7 +23,7 @@ const Sem = ({navigation}) => {
    
   },[])
 
- console.log(semester)
+ console.log(semDetails)
 
   const renderItem = ({ item }) => {
     return < SemSlide item={item} navigation={navigation} />;
@@ -41,10 +41,7 @@ const Sem = ({navigation}) => {
       renderItem={renderItem}
       keyExtractor={(item) => item.id}
 
-<<<<<<< HEAD
-=======
-      
->>>>>>> d47e681ff22837a4f97d7eab7f02f7317302a0b7
+
       numColumns={2}
     />:<> <h1>data not found</h1> </>}
  
@@ -55,8 +52,9 @@ const Sem = ({navigation}) => {
 const styles=StyleSheet.create({
     semContainer:{
       flex:1,
-      flexWrap:'wrap',
-      margin:5,
+      margin:2,
+    
+      
      
       
     }

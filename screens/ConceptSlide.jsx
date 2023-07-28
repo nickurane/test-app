@@ -1,14 +1,23 @@
-import React from 'react'
+import React ,{useState,useEffect}from 'react'
 import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
 
-const Slide = ({item,navigation}) => {
+
+const ConceptSlide = ({navigation,item}) => {
+
+
+
  
-    
-   
+
+
+
+
+
+
+
   return (
     <TouchableOpacity style={[styles.slideContainer,{backgroundColor:'#5b238c'}]}
     
-    onPress={()=>{navigation.navigate("Chapter",{"id":item.id})}}
+    onPress={()=>{navigation.navigate("Question",{"id":item.id})}}
     
     
     
@@ -18,10 +27,8 @@ const Slide = ({item,navigation}) => {
        <Text>{item.name}</Text>
    </View>
    </TouchableOpacity>
- 
   )
 }
-
 const styles=StyleSheet.create({
     slideContainer:{
         flex:1,
@@ -32,4 +39,4 @@ const styles=StyleSheet.create({
         alignItems:'center'
     }
 })
-export default Slide
+export default ConceptSlide
