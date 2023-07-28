@@ -11,9 +11,12 @@ const Chapter = ({navigation,route}) => {
  
   const [chapters,setChapters]=useState([])
 
+  console.log(route.params.id,route.params.path)
 
-  const getData=async ()=>{
-    let s= await getChapters()
+
+
+  const getData=async (id,path)=>{
+    let s= await getChapters(id ,path)
     console.log("chapters:",s);
     setChapters(s)
     console.log(chapters)
@@ -22,7 +25,7 @@ const Chapter = ({navigation,route}) => {
  
  
   useEffect(()=>{
-  getData()
+  getData(route.params.id,route.params.path)
    
   },[])
 
@@ -45,7 +48,7 @@ const Chapter = ({navigation,route}) => {
 
 
   const renderItem = ({ item }) => {
-    return <ChapterSlide item={item} navigation={navigation} />
+    return <ChapterSlide item={item} navigation={navigation} path={{'sem_id':route.params.path.sem_id,'sub_id':route.params.id}} />
   };
 
 

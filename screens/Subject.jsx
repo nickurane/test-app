@@ -10,8 +10,9 @@ const Subject = ({navigation,route}) => {
   const [subjects,setSubjects]=useState([])
 
    console.log(route.params.id)
-  const getData=async ()=>{
-    let s= await getSubjects()
+
+  const getData=async (id)=>{
+    let s= await getSubjects(id)
     console.log("subject:",s);
     setSubjects(s)
    
@@ -19,13 +20,13 @@ const Subject = ({navigation,route}) => {
  
  
   useEffect(()=>{
-  getData()
+  getData(route.params.id)
    
   },[])
 
   
   const renderItem = ({ item }) => {
-    return <Slide item={item} navigation={navigation} />;
+    return <Slide item={item} navigation={navigation} path={{"sem_id":route.params.id}}/>;
   };
 
 

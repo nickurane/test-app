@@ -1,5 +1,6 @@
 import { collection, getFirestore,getDocs,query,where,onSnapshot,getDoc,collectionGroup } from "firebase/firestore";
 
+
 const setUp = async () => {
   let sem = [];
   //connect to the database
@@ -22,24 +23,27 @@ const setUp = async () => {
 };
 
 const getSubjects = async (id) => {
-  const db = getFirestore();
-  const  postsQuery  = collectionGroup(db, "subject",where("id", "==", id));
-  let subjects = [];
-  const querySnapshot=await getDocs(postsQuery)
-   querySnapshot.forEach((doc) => {
-        // doc.data() returns the data of the document
-        subjects.push({ id: doc.id, ...doc.data() });
-       
-    
-     
 
-    })
-    return subjects;
+  console.log(id)
+  const db = getFirestore();
+  const postsQuery = collection(db, "sem", id, "subject");
+  let subjects = [];
+  
+  // Use 'await' when calling 'getDocs'
+  const querySnapshot = await getDocs(postsQuery);
+  
+  querySnapshot.forEach((doc) => {
+    // doc.data() returns the data of the document
+    subjects.push({ id: doc.id, ...doc.data() });
+  });
+  
+  return subjects;
    
 };
-const getChapters = async (id) => {
+const getChapters = async (id,path) => {
+  console.log(id,path)
   const db = getFirestore();
-  const  postsQuery  = collectionGroup(db, "chapter",where("id", "==", id));
+  const  postsQuery  = collection(db, "sem",path.sem_id,"subject",id,"chapter");
   let chapters = [];
   const querySnapshot=await getDocs(postsQuery)
    querySnapshot.forEach((doc) => {
@@ -56,9 +60,9 @@ const getChapters = async (id) => {
 
 
 
-const getConcepts= async (id) => {
+const getConcepts= async (id,path) => {
   const db = getFirestore();
-  const  postsQuery  = collectionGroup(db, "concepts",where("id", "==", id));
+  const  postsQuery  = collection(db, "sem",path.sem_id,"subject",path.sub_id,"chapter",id,"concepts");
   let concepts = [];
   const querySnapshot=await getDocs(postsQuery)
    querySnapshot.forEach((doc) => {
@@ -73,4 +77,24 @@ const getConcepts= async (id) => {
    
 };
 
-export { setUp ,getSubjects,getChapters,getConcepts};
+
+const getQuestions= async (id,path) => {
+  console.log(path)
+  const db = getFirestore();
+  const  postsQuery  = collection(db, "sem",path.sem_id,"subject",path.sub_id,"chapter",path.cha_id,"concepts",id,"question");
+  let questions = [];
+  const querySnapshot=await getDocs(postsQuery)
+   querySnapshot.forEach((doc) => {
+        // doc.data() returns the data of the document
+        questions.push({ id: doc.id, ...doc.data() });
+       
+    
+     
+
+    })
+    console.log(questions)
+    return questions;
+   
+};
+
+export { setUp ,getSubjects,getChapters,getConcepts,getQuestions};
