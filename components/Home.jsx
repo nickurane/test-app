@@ -22,6 +22,7 @@ function Home() {
  
      <Stack.Navigator initialRouteName='Semester'
     screenOptions={{
+      cardOverlayEnabled:true,
   
     }}>
     
