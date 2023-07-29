@@ -10,19 +10,19 @@ import { getChapters } from '../components/firestore';
 const Chapter = ({navigation,route}) => {
  
   const [chapters,setChapters]=useState([])
+  console.log(route,navigation)
 
-
-  const getData=async ()=>{
-    let s= await getChapters()
-    console.log("chapters:",s);
+  const getData=async (id)=>{
+    let s= await getChapters(id)
+   
     setChapters(s)
-    console.log(chapters)
+  
    
   }
  
  
   useEffect(()=>{
-  getData()
+  getData(route.params.id)
    
   },[])
 

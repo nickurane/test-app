@@ -18,7 +18,7 @@ const Concept = ({navigation,route}) => {
    
    
     useEffect(()=>{
-    getData()
+    getData(route.params.id)
      
     },[])
 

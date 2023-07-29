@@ -6,7 +6,7 @@ import { setUp } from '../components/firestore'
 import SemSlide from './SemSlide'
 
 
-const Sem = ({navigation}) => {
+const Sem = ({navigation,route}) => {
 
   const [semester,setSem]=useState([])
 
@@ -23,11 +23,13 @@ const Sem = ({navigation}) => {
    
   },[])
 
- console.log(semDetails)
+ console.log(route,navigation)
 
   const renderItem = ({ item }) => {
     return < SemSlide item={item} navigation={navigation} />;
   };
+
+  console.log()
 
   return (
     <View style={styles.semContainer}>

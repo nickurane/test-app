@@ -16,7 +16,7 @@ const QuestionSlide = ({item,setCorrectAnswer, setWrongAnswer}) => {
         <View style={[styles.optionContainer,]} >
           <TouchableOpacity style={[styles.questionTxt,{backgroundColor:option1}]}
           onPress={()=>{
-            if( item.options.A===item.correct_option)
+            if( item.a===item.correct_answer)
            {
             setOption1('green')
             setCorrectAnswer(prev=>prev+1)
@@ -38,13 +38,13 @@ const QuestionSlide = ({item,setCorrectAnswer, setWrongAnswer}) => {
           
           >
             <MaterialCommunityIcons name="checkbox-blank-outline" size={24} color="black" />
-            <Text>{item.options.A}
+            <Text>{item.a}
             </Text>
             
             </TouchableOpacity>
             <TouchableOpacity style={[styles.questionTxt,{backgroundColor:option2}]}
           onPress={()=>{
-            if( item.options.B===item.correct_option)
+            if( item.b===item.correct_answer)
             {
              setOption2('green')
              setCorrectAnswer(prev=>prev+1)
@@ -61,13 +61,13 @@ const QuestionSlide = ({item,setCorrectAnswer, setWrongAnswer}) => {
           
           >
             <MaterialCommunityIcons name="checkbox-blank-outline" size={24} color="black" />
-            <Text>{item.options.B}
+            <Text>{item.b}
             </Text>
             
             </TouchableOpacity>
             <TouchableOpacity style={[styles.questionTxt,{backgroundColor:option3}]}
           onPress={()=>{
-            if( item.options.C===item.correct_option)
+            if( item.c===item.correct_answer)
             {
              setOption3('green')
              setCorrectAnswer(prev=>prev+1)
@@ -84,13 +84,13 @@ const QuestionSlide = ({item,setCorrectAnswer, setWrongAnswer}) => {
           
           >
             <MaterialCommunityIcons name="checkbox-blank-outline" size={24} color="black" />
-            <Text>{item.options.C}
+            <Text>{item.c}
             </Text>
             
             </TouchableOpacity>
             <TouchableOpacity style={[styles.questionTxt,{backgroundColor:option4}]}
           onPress={()=>{
-            if( item.options.D===item.correct_option)
+            if( item.d===item.correct_answer)
            {
             setOption4('green')
             setCorrectAnswer(prev=>prev+1)
@@ -107,14 +107,14 @@ const QuestionSlide = ({item,setCorrectAnswer, setWrongAnswer}) => {
           
           >
             <MaterialCommunityIcons name="checkbox-blank-outline" size={24} color="black" />
-            <Text>{item.options.D}
+            <Text>{item.d}
             </Text>
             
             </TouchableOpacity>
             {disable?
             <View style={styles.ansContainer}>
               <Text style={styles.ansContainerTxt}>Correct Answer:</Text>
-             <Text style={styles.ansContainerTxt}>{item.correct_option}</Text> 
+             <Text style={styles.ansContainerTxt}>{item.correct_answer}</Text> 
             </View>:<></>}
         </View>
       </View>

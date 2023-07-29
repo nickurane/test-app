@@ -1,5 +1,7 @@
 import React from 'react'
-import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
+import {View,Text,StyleSheet,TouchableOpacity,Image} from "react-native"
+// import { Image } from 'expo-image';
+import first_year from "../assets/first_year.svg"
 
 const SemSlide = ({item,navigation}) => {
   
@@ -9,8 +11,14 @@ const SemSlide = ({item,navigation}) => {
    <TouchableOpacity 
    onPress={() => navigation.navigate("Subject",{"id":item.id})}
    
-   style={[styles.SemSlideContainer,{backgroundColor:'#5b238c'}]}>
+   style={[styles.SemSlideContainer]}>
     <View >
+      <Image Source={first_year }
+        style={styles.image}
+       contentFit="cover"
+       transition={1000}
+      
+      />
      <Text style={styles.headingTxt}>{item.sem} Sem</Text>
      </View>
     </TouchableOpacity>
@@ -35,9 +43,15 @@ const styles=StyleSheet.create({
 
     }
     ,headingTxt:{
-      color:'white',
+      color:'black',
       fontWeight:'bold',
       fontSize:15
-    }
+    },
+    image: {
+      flex: 1,
+      width: '14rem',
+      height:'14rem',
+      backgroundColor: 'green',
+    },
 })
 export default SemSlide

@@ -9,17 +9,17 @@ const Subject = ({navigation,route}) => {
 
   const [subjects,setSubjects]=useState([])
 
-   console.log(route.params.id)
-  const getData=async ()=>{
-    let s= await getSubjects()
-    console.log("subject:",s);
+  console.log(route,navigation)
+  const getData=async (id)=>{
+    let s= await getSubjects(id)
+  
     setSubjects(s)
    
   }
  
  
   useEffect(()=>{
-  getData()
+  getData(route.params.id)
    
   },[])
 

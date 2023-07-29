@@ -1,7 +1,8 @@
-import React ,{useState}from 'react'
+import React ,{useState,useEffect}from 'react'
 import {View,Text,FlatList,StyleSheet} from "react-native"
 import {question} from "./data"
 import QuestionSlide from './QuestionSlide';
+import {getQuestions} from "../components/firestore"
 
 
 
@@ -9,6 +10,30 @@ import QuestionSlide from './QuestionSlide';
 const Question= () => {
 const [correctAnswer,setCorrectAnswer]=useState(0)
 const [wrongAnswer,setWrongAnswer]=useState(0)
+const [questions,setQuestions]=useState([])
+
+
+
+const getData=async ()=>{
+  let s= await getQuestions()
+  console.log("questions:",s);
+  setQuestions(s)
+  
+ 
+}
+
+
+useEffect(()=>{
+getData()
+ 
+},[])
+
+
+
+
+
+
+
 
 
 
@@ -25,7 +50,7 @@ const [wrongAnswer,setWrongAnswer]=useState(0)
     <Text style={styles.txtHeading}>Wrong Answered:   {wrongAnswer}</Text>
     </View>
     <FlatList
-      data={question}
+      data={questions}
       renderItem={renderItem1}
       keyExtractor={(item) => item.id}
     
