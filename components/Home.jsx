@@ -52,17 +52,11 @@ function Home({navigation}) {
  
      <Stack.Navigator initialRouteName='Semester'
     screenOptions={{
-<<<<<<< HEAD
-      cardOverlayEnabled:true,
-  
-    }}>
-=======
       headerStyle: { backgroundColor: '#6528F7' ,color:'white',
       flex:1,
       display:'flex',
         justifyContent:'center',
         alignItem:'center',
->>>>>>> b90470b8724cabde542417a24497caf40aa74863
     
     
     },
