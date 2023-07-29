@@ -12,8 +12,8 @@ console.log("chapter slide path",path)
     
     >
     <View style={styles.txtContainer} >
-       <Text style={[styles.txt,{color:item.id%2?'white':'black'}]}>{item.id}</Text>
-       <Text style={[styles.txt,{color:item.id%2?'white':'black'}]}>{item.name}</Text>
+
+       <Text style={[styles.txt,{color:'black'}]}>{item.name}</Text>
    </View>
    </TouchableOpacity>
  
@@ -22,12 +22,15 @@ console.log("chapter slide path",path)
 
 const styles=StyleSheet.create({
   container:{
-    height:70,
+    height:50,
    
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
-    flexDirection:'row'
+    flexDirection:'row',
+    margin:3,
+    borderRadius:4,
+    borderWidth:1,
   },
   txtContainer:{
     

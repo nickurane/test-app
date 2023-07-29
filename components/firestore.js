@@ -1,6 +1,7 @@
 import { collection, getFirestore,getDocs,query,where,onSnapshot,getDoc,collectionGroup } from "firebase/firestore";
 
 
+
 const setUp = async () => {
   let sem = [];
   //connect to the database
@@ -53,28 +54,30 @@ const getChapters = async (id,path) => {
     
      
 
-  //   })
-   console.log(id)
+    })
+  //  console.log(id)
 
-  const chapterRef = collection(db, 'subject', id, 'chapter');
-  const q = query(chapterRef);
-  const queryS = await getDocs(q);
+//   const chapterRef = collection(db, 'subject', id, 'chapter');
+//   const q = query(chapterRef);
+//   //need to put await
+//   // const queryS = await getDocs(q);
 
-  queryS.forEach((doc) => {
-    chapters.push({ id: doc.id, ...doc.data() });
-  });
-
-
-
+//   queryS.forEach((doc) => {
+//     chapters.push({ id: doc.id, ...doc.data() });
+//   });
 
 
-console.log(chapters)
+
+
+
+// console.log(chapters)
 
 
 
 
     return chapters;
    
+// })
 };
 
 
@@ -116,4 +119,9 @@ const getQuestions= async (id,path) => {
    
 };
 
-export { setUp ,getSubjects,getChapters,getConcepts,getQuestions};
+
+
+
+
+
+export {setUp ,getSubjects,getChapters,getConcepts,getQuestions}

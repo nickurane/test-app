@@ -14,13 +14,9 @@ const SemSlide = ({item,navigation}) => {
    
    style={[styles.SemSlideContainer]}>
     <View >
-      <Image Source={first_year }
-        style={styles.image}
-       contentFit="cover"
-       transition={1000}
-      
-      />
+   
      <Text style={styles.headingTxt}>{item.sem} Sem</Text>
+    
      </View>
     </TouchableOpacity>
 
@@ -32,14 +28,17 @@ const styles=StyleSheet.create({
     SemSlideContainer:{
   
   
-    
-     
+      borderRadius:5,
+      borderWidth:1,
+      margin:3.5,
+      backgroundColor:'#f1f3f4',
       flex:1,
-      display:'flex',
+      
       justifyContent:'center',
-      alignItems:'center',
+     alignItems:'center',
       height:100,
-      margin:1,
+      
+     
 
 
     }

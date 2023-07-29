@@ -55,10 +55,8 @@ const Chapter = ({navigation,route}) => {
 
 
   return (
-    <View>
-      <View>
-      <Text>Chapters</Text>
-      </View>
+    <View style={styles.chapterContainer}>
+    
       <FlatList
         data={chapters}
         renderItem={renderItem}
@@ -73,6 +71,12 @@ const Chapter = ({navigation,route}) => {
 }
 
 const styles=StyleSheet.create({
+  chapterContainer:{
+    flex:1,
+    marginHorizontal:10,
+    marginVertical:4,
+    backgroundColor:'smokewhite'
+  }
 
   })
 

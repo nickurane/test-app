@@ -1,8 +1,12 @@
 import React from 'react'
-import {View,Text,Stylesheet,TextInput} from "react-native"
+import {View,Text,Stylesheet,TextInput,TouchableOpacity} from "react-native"
+import Icon from 'react-native-vector-icons/AntDesign';
+
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { auth } from "./firebaseauth"
+import { getAuth, signOut } from "firebase/auth";
 
 import Subject from "../screens/Subject"
 import Topic from "../screens/Topic"
@@ -11,21 +15,68 @@ import Chapter from "../screens/Chapter"
 import Question from '../screens/Question';
 import Concept from "../screens/Concepts"
 
+
+
+
     // const Drawer = createDrawerNavigator();
     const Stack = createNativeStackNavigator();
 
-function Home() {
+function Home({navigation}) {
+
+  const logOut=()=>{
+
+    signOut(auth).then(() => {
+      navigation.replace('Login')
+      
+    }).catch((error) => {
+      // An error happened.
+    });
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
   return (
  
- 
- 
+
  
      <Stack.Navigator initialRouteName='Semester'
     screenOptions={{
-  
-    }}>
+      headerStyle: { backgroundColor: '#6528F7' ,color:'white',
+      flex:1,
+      display:'flex',
+        justifyContent:'center',
+        alignItem:'center',
     
-    <Stack.Screen name="Subject" component={Subject} />
+    
+    },
+      headerTitleStyle : {
+        color: 'white',
+        
+        
+      },
+      headerRight: () => (
+        // onPress={()=>{signOut()}}
+        <TouchableOpacity style={{marginHorizontal:45}} onPress={()=>{logOut()}} >
+          <Text><Icon name="logout" size={20} color="white" /></Text>
+        </TouchableOpacity>
+      )
+    }}>
+  
+    
+    <Stack.Screen name="Subject" component={Subject} 
+  
+    />
     <Stack.Screen name="Topic" component={Topic} />
     <Stack.Screen name="Semester" component={Sem} />
     <Stack.Screen name="Chapter" component={Chapter} />
@@ -34,6 +85,7 @@ function Home() {
 
  </Stack.Navigator>
 
+ 
 
     
   )

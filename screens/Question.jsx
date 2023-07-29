@@ -60,7 +60,9 @@ getData(id,path)
   };
 
   return (
-    <View style={{flex:1}}>
+    <View style={{flex:1,
+      marginHorizontal:10,
+      marginVertical:4,}}>
     <View style={styles.scoreContainer}>
     <Text style={styles.txtHeading}>Correct Answered:  {correctAnswer}</Text>
     <Text style={styles.txtHeading}>Wrong Answered:   {wrongAnswer}</Text>
@@ -82,7 +84,7 @@ const styles=StyleSheet.create({
    
     borderColor:'black',
     padding:10,
-   
+    borderRadius:10,
     borderWidth:1,
     height:90,
     display:'flex',

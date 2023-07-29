@@ -33,10 +33,8 @@ const Concept = ({navigation,route}) => {
 
 
   return (
-    <View>
-    <View>
-    <Text>Concepts</Text>
-    </View>
+    <View style={styles. conceptContainer}>
+    
     <FlatList
       data={concepts}
       renderItem={renderItem1}
@@ -49,5 +47,14 @@ const Concept = ({navigation,route}) => {
   </View>
   )
 }
+
+const styles=StyleSheet.create({
+  conceptContainer:{
+    flex:1,
+    marginHorizontal:10,
+    marginVertical:4,
+    backgroundColor:'smokewhite'
+  }
+})
 
 export default Concept
