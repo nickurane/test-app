@@ -31,10 +31,8 @@ const Subject = ({navigation,route}) => {
 
 
   return (
-    <View>
-      <View>
-      <Text>Subject</Text>
-      </View>
+    <View style={styles.subjectContainer}>
+   
       {/* <View style={styles.subjectContainer}> */}
       <FlatList
         data={subjects}
@@ -54,8 +52,9 @@ const Subject = ({navigation,route}) => {
 const styles=StyleSheet.create({
   subjectContainer:{
     flex:1,
-    flexWrap:'wrap',
-    backgroundColor:'green'
+    marginHorizontal:10,
+    marginVertical:4,
+    backgroundColor:'smokewhite'
     
   }
 

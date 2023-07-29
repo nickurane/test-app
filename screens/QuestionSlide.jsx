@@ -124,9 +124,13 @@ const styles=StyleSheet.create({
   questionContainer:{
     margin:10,
     borderColor:'black',
-    padding:10,
-    borderRadius:20,
+    padding:20,
+    borderRadius:10,
     borderWidth:1,
+    flex:1,
+    justifyContent:'center',
+
+
   },
   optionContainer:{
     flex:1,

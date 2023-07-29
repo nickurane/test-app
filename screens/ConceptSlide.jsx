@@ -15,15 +15,15 @@ console.log(path)
 
 
   return (
-    <TouchableOpacity style={[styles.slideContainer,{backgroundColor:'#5b238c'}]}
+    <TouchableOpacity style={[styles.slideContainer]}
     
     onPress={()=>{navigation.navigate("Question",{"id":item.id,'path':path})}}
     
     
     
     >
-    <View >
-       <Text>{item.id}</Text>
+    <View style={styles.  txtContainer} >
+     
        <Text>{item.name}</Text>
    </View>
    </TouchableOpacity>
@@ -31,12 +31,25 @@ console.log(path)
 }
 const styles=StyleSheet.create({
     slideContainer:{
-        flex:1,
-        backgroundColor:'blue',
-        height:150,
-        margin:2,
-        justifyContent:'center',
-        alignItems:'center'
+      height:50,
+   
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      flexDirection:'row',
+      margin:3,
+      borderRadius:4,
+      borderWidth:1,
+    },
+    txtContainer:{
+    
+      display:'flex',
+      flexDirection:'row',
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      gap:5,
+  
     }
 })
 export default ConceptSlide

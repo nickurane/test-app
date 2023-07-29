@@ -6,7 +6,7 @@ import { setUp } from '../components/firestore'
 import SemSlide from './SemSlide'
 
 
-const Sem = ({navigation}) => {
+const Sem = ({navigation,route}) => {
 
   const [semester,setSem]=useState([])
 
@@ -23,17 +23,17 @@ const Sem = ({navigation}) => {
    
   },[])
 
- console.log(semDetails)
+ console.log(route,navigation)
 
   const renderItem = ({ item }) => {
     return < SemSlide item={item} navigation={navigation} />;
   };
 
+
+
   return (
     <View style={styles.semContainer}>
-    <View>
-    <Text>Semester </Text>
-    </View>
+   
     <View>
     {semester?
     <FlatList
@@ -52,7 +52,9 @@ const Sem = ({navigation}) => {
 const styles=StyleSheet.create({
     semContainer:{
       flex:1,
-      margin:2,
+      marginHorizontal:10,
+      marginVertical:4,
+      backgroundColor:'smokewhite'
     
       
      

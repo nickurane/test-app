@@ -6,7 +6,7 @@ const Slide = ({item,navigation,path}) => {
     
    
   return (
-    <TouchableOpacity style={[styles.slideContainer,{backgroundColor:'#5b238c'}]}
+    <TouchableOpacity style={[styles.slideContainer]}
     
     onPress={()=>{navigation.navigate("Chapter",{"id":item.id,"path":path})}}
     
@@ -14,8 +14,8 @@ const Slide = ({item,navigation,path}) => {
     
     >
     <View >
-       <Text>{item.id}</Text>
-       <Text>{item.name}</Text>
+      
+       <Text style={styles.headingTxt}>{item.name}</Text>
    </View>
    </TouchableOpacity>
  
@@ -24,12 +24,22 @@ const Slide = ({item,navigation,path}) => {
 
 const styles=StyleSheet.create({
     slideContainer:{
+        borderRadius:5,
+        borderWidth:1,
+        margin:3.5,
+        backgroundColor:'#f1f3f4',
         flex:1,
-        backgroundColor:'blue',
-        height:150,
-        margin:2,
+        
         justifyContent:'center',
-        alignItems:'center'
-    }
+       alignItems:'center',
+        height:100,
+      
+     
+
+    }, headingTxt:{
+        color:'black',
+        fontWeight:'bold',
+        fontSize:15
+      }
 })
 export default Slide

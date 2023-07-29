@@ -10,6 +10,7 @@ import { getChapters } from '../components/firestore';
 const Chapter = ({navigation,route}) => {
  
   const [chapters,setChapters]=useState([])
+  console.log(route,navigation)
 
   console.log(route.params.id,route.params.path)
 
@@ -19,7 +20,7 @@ const Chapter = ({navigation,route}) => {
     let s= await getChapters(id ,path)
     console.log("chapters:",s);
     setChapters(s)
-    console.log(chapters)
+  
    
   }
  
@@ -54,10 +55,8 @@ const Chapter = ({navigation,route}) => {
 
 
   return (
-    <View>
-      <View>
-      <Text>Chapters</Text>
-      </View>
+    <View style={styles.chapterContainer}>
+    
       <FlatList
         data={chapters}
         renderItem={renderItem}
@@ -72,6 +71,12 @@ const Chapter = ({navigation,route}) => {
 }
 
 const styles=StyleSheet.create({
+  chapterContainer:{
+    flex:1,
+    marginHorizontal:10,
+    marginVertical:4,
+    backgroundColor:'smokewhite'
+  }
 
   })
 

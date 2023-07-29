@@ -31,6 +31,9 @@ function Login({navigation,route}) {
 
   }
 
+
+
+
   const loginExistingUser=()=>{
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
@@ -46,6 +49,8 @@ function Login({navigation,route}) {
   });
 
   }
+
+  
 
 
 
