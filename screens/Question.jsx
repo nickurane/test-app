@@ -1,32 +1,48 @@
 import React ,{useState,useEffect}from 'react'
 import {View,Text,FlatList,StyleSheet} from "react-native"
-import {question} from "./data"
+
 import QuestionSlide from './QuestionSlide';
 import {getQuestions} from "../components/firestore"
 
 
 
 
-const Question= () => {
+const Question= ({route}) => {
+  
 const [correctAnswer,setCorrectAnswer]=useState(0)
 const [wrongAnswer,setWrongAnswer]=useState(0)
 const [questions,setQuestions]=useState([])
 
+let {id,path}=route.params;
+console.log(id,path)
 
-
-const getData=async ()=>{
-  let s= await getQuestions()
+const getData=async (id,path)=>{
+  let s= await getQuestions(id,path)
   console.log("questions:",s);
-  setQuestions(s)
-  
+setQuestions(s)
+  console.log(questions)
  
 }
 
 
 useEffect(()=>{
-getData()
+getData(id,path)
  
 },[])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

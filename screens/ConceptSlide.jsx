@@ -2,10 +2,10 @@ import React ,{useState,useEffect}from 'react'
 import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
 
 
-const ConceptSlide = ({navigation,item}) => {
+const ConceptSlide = ({navigation,item,path}) => {
 
 
-
+console.log(path)
  
 
 
@@ -17,7 +17,7 @@ const ConceptSlide = ({navigation,item}) => {
   return (
     <TouchableOpacity style={[styles.slideContainer,{backgroundColor:'#5b238c'}]}
     
-    onPress={()=>{navigation.navigate("Question",{"id":item.id})}}
+    onPress={()=>{navigation.navigate("Question",{"id":item.id,'path':path})}}
     
     
     

@@ -3,7 +3,7 @@ import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const QuestionSlide = ({item,setCorrectAnswer, setWrongAnswer}) => {
-  console.log(item)
+
   const [option1,setOption1]=useState('')
   const [option2,setOption2]=useState('')
   const [option3,setOption3]=useState('')

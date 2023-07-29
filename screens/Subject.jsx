@@ -9,10 +9,11 @@ const Subject = ({navigation,route}) => {
 
   const [subjects,setSubjects]=useState([])
 
-  console.log(route,navigation)
+   console.log(route.params.id)
+
   const getData=async (id)=>{
     let s= await getSubjects(id)
-  
+    console.log("subject:",s);
     setSubjects(s)
    
   }
@@ -25,7 +26,7 @@ const Subject = ({navigation,route}) => {
 
   
   const renderItem = ({ item }) => {
-    return <Slide item={item} navigation={navigation} />;
+    return <Slide item={item} navigation={navigation} path={{"sem_id":route.params.id}}/>;
   };
 
 

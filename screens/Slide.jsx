@@ -1,14 +1,14 @@
 import React from 'react'
 import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
 
-const Slide = ({item,navigation}) => {
- 
+const Slide = ({item,navigation,path}) => {
+   console.log(path)
     
    
   return (
     <TouchableOpacity style={[styles.slideContainer,{backgroundColor:'#5b238c'}]}
     
-    onPress={()=>{navigation.navigate("Chapter",{"id":item.id})}}
+    onPress={()=>{navigation.navigate("Chapter",{"id":item.id,"path":path})}}
     
     
     
