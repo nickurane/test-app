@@ -1,6 +1,8 @@
 import React from 'react'
-import {View,Text,Stylesheet,TextInput,TouchableOpacity} from "react-native"
+import {View,Text,Stylesheet,TextInput,TouchableOpacity, Touchable} from "react-native"
 import Icon from 'react-native-vector-icons/AntDesign';
+
+
 
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -21,7 +23,12 @@ import Concept from "../screens/Concepts"
     // const Drawer = createDrawerNavigator();
     const Stack = createNativeStackNavigator();
 
-function Home({navigation}) {
+function Home({navigation,route}) {
+
+
+
+  // let {routes}=navigation.getState()
+  
 
   const logOut=()=>{
 
@@ -57,17 +64,33 @@ function Home({navigation}) {
       display:'flex',
         justifyContent:'center',
         alignItem:'center',
-    
+        padding:50,
+        
     
     },
       headerTitleStyle : {
         color: 'white',
-        
+        textAlign:'center',
+       
         
       },
+      headerBackTitleStyle:{
+        color:'white'
+        
+      },
+      headerLeft: () => (
+        route.name!="Semester"?
+       <TouchableOpacity onPress={()=>{navigation.goBack()}}>
+        <View style={{ padding: 10}}>
+        <Icon name="back" size={20} color="white" />
+        </View>
+       </TouchableOpacity>:<></>
+
+        
+      ),
       headerRight: () => (
         // onPress={()=>{signOut()}}
-        <TouchableOpacity style={{marginHorizontal:45}} onPress={()=>{logOut()}} >
+        <TouchableOpacity onPress={()=>{logOut()}} >
           <Text><Icon name="logout" size={20} color="white" /></Text>
         </TouchableOpacity>
       )

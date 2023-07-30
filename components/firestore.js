@@ -7,10 +7,10 @@ const setUp = async () => {
   //connect to the database
   const db = getFirestore();
   //collection ref.
-  const collection_ref = collection(db, "sem");
+  const collection_ref = collection(db, "sem")
 
   try {
-    const snapshot = await getDocs(collection_ref);
+    const snapshot = await getDocs(collection_ref)
     snapshot.docs.forEach((doc) => {
       sem.push({ ...doc.data(), id: doc.id });
     });

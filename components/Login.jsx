@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput} from "react-native"
+import { View, Text, StyleSheet, TextInput,Image} from "react-native"
 import { auth } from "./firebaseauth"
 import {createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
 import { TouchableOpacity } from 'react-native';
+import male_avatar from "../assets/male_avatar.svg"
 
-import Home from "./Home"
+
 
 function Login({navigation,route}) {
 
@@ -57,11 +58,13 @@ function Login({navigation,route}) {
 
   return (
     <View style={styles.container}>
- <Text>Login</Text>
+
       <View style={styles.loginContainer}>
+          <View>
+              <Image source={male_avatar} style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}}  />
+          </View>
 
-
-       
+      
         <TextInput placeholder="Email" onChangeText={text => setEmail(text)} style={styles.input} />
         <TextInput placeholder="Password" onChangeText={(text) => { setPassword(text) }} style={styles.input} secureTextEntry />
         <TouchableOpacity style={styles.button} 
@@ -75,11 +78,12 @@ function Login({navigation,route}) {
         </TouchableOpacity > 
          <TouchableOpacity 
 
-          onPress={() => { registerNewUser() }}
+          onPress={() => { navigation.replace('Register') }}
           style={[styles.button, styles.outLinedBtn,]} >
             <Text style={styles.outlinebtnTxt}>Register</Text>
             </TouchableOpacity > 
       </View>
+      
 
     </View>
   )
@@ -102,7 +106,7 @@ const styles = StyleSheet.create({
   },
   loginContainer: {
     width: '85%',
-    height: '50%',
+    height: '70%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

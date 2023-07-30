@@ -24,7 +24,7 @@ console.log(path)
     >
     <View style={styles.  txtContainer} >
      
-       <Text>{item.name}</Text>
+       <Text style={styles.containerTxt} >{item.name}</Text>
    </View>
    </TouchableOpacity>
   )
@@ -32,7 +32,7 @@ console.log(path)
 const styles=StyleSheet.create({
     slideContainer:{
       height:50,
-   
+      backgroundColor:'#dae7e6',
       display:'flex',
       justifyContent:'center',
       alignItems:'center',
@@ -50,6 +50,9 @@ const styles=StyleSheet.create({
       alignItems:'center',
       gap:5,
   
+    },
+    containerTxt:{
+      fontWeight:'bold'
     }
 })
 export default ConceptSlide

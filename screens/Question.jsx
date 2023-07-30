@@ -92,7 +92,7 @@ const styles=StyleSheet.create({
     alignItems:'center',
     flexDirection:'row',
     paddingHorizontal:35,
-    backgroundColor:'#5b238c'
+    backgroundColor:'#6528f7'
   },
   txtHeading:{
     color:'white',
