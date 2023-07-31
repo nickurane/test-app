@@ -11,20 +11,48 @@ function Register({navigation}) {
 const [email,setEmail]=useState('')
 const [password,setPassword]=useState('')
 const [confirmPassword,setConfirmPassword]=useState('')
+const [firstname,setFirstname]=useState('')
+const [lastname,setLastname]=useState('')
+const db = firebase.firestore();
+
+
 
 console.log(navigation)
 const registerNewUser = () => {
 
- if(email && password && confirmPassword)
+  const userRef = db.collection('user');
+
+
+ if(email && password && confirmPassword && firstname && lastname )
  {
 
    if(password===confirmPassword)
    {
+
+
+
+
     createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    navigation.replace('Home')
+
+    const newUser = {
+     firstname:firstname,
+     lastname:lastname,
+     email:email,
+     password:password,
+    };
+    userRef.add(newUser)
+  .then((docRef) => {
+    console.log('Document added with ID:', docRef.id);
+  })
+  .catch((error) => {
+    console.error('Error adding document:', error);
+    navigation.replace('Login')
+  });
+
+  navigation.replace('Home')
     // ...
   })
   .catch((error) => {
@@ -61,8 +89,8 @@ else
         <View>
             <Image source={male_avatar} style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}}  />
         </View>
-
-    
+        <TextInput placeholder="Firstname" onChangeText={text => setFirstname(text)} style={styles.input} />
+        <TextInput placeholder="Lastname" onChangeText={text => setLastname(text)} style={styles.input} />
       <TextInput placeholder="Email" onChangeText={text => setEmail(text)} style={styles.input} />
       <TextInput placeholder="Password" onChangeText={(text) => { setPassword(text) }} style={styles.input} secureTextEntry />
       <TextInput placeholder="Confirm Password" onChangeText={(text) => { setConfirmPassword(text) }} style={styles.input} secureTextEntry />
