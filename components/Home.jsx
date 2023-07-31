@@ -90,7 +90,7 @@ function Home({navigation,route}) {
       ),
       headerRight: () => (
         // onPress={()=>{signOut()}}
-        <TouchableOpacity onPress={()=>{logOut()}} >
+        <TouchableOpacity onPress={()=>{logOut()}} style={{ padding: 10}}>
           <Text><Icon name="logout" size={20} color="white" /></Text>
         </TouchableOpacity>
       )
