@@ -16,12 +16,15 @@ import Sem from "../screens/Sem"
 import Chapter from "../screens/Chapter"
 import Question from '../screens/Question';
 import Concept from "../screens/Concepts"
-
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
 
     // const Drawer = createDrawerNavigator();
     const Stack = createNativeStackNavigator();
+   
+
+const Drawer = createDrawerNavigator();
 
 function Home({navigation,route}) {
 
@@ -54,7 +57,7 @@ function Home({navigation,route}) {
 
 
   return (
- 
+   <>
 
  
      <Stack.Navigator initialRouteName='Semester'
@@ -108,7 +111,44 @@ function Home({navigation,route}) {
 
  </Stack.Navigator>
 
+ {/* <Drawer.Navigator>
+ <Drawer.Screen name="Semester" component={Sem} />
+
+ <Stack.Screen name="Subject" component={Subject} 
+  
+    />
+    <Drawer.Screen name="Topic" component={Topic} />
  
+    <Drawer.Screen name="Chapter" component={Chapter} />
+    <Drawer.Screen name="Concepts" component={Concept} />
+    <Drawer.Screen name="Question" component={Question} />
+
+
+ </Drawer.Navigator> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </>
 
     
   )
