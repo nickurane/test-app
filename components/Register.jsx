@@ -5,6 +5,7 @@ import {createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "fireba
 import { TouchableOpacity } from 'react-native';
 import male_avatar from "../assets/male_avatar.svg"
 import BouncyCheckbox from "react-native-bouncy-checkbox";
+import { collection,getDocsgetDoc ,getFirestore,addDoc} from "firebase/firestore";
 
 function Register({navigation}) {
 
@@ -13,14 +14,16 @@ const [password,setPassword]=useState('')
 const [confirmPassword,setConfirmPassword]=useState('')
 const [firstname,setFirstname]=useState('')
 const [lastname,setLastname]=useState('')
-const db = firebase.firestore();
 
 
 
-console.log(navigation)
+
+
+
 const registerNewUser = () => {
+  const db = getFirestore();
 
-  const userRef = db.collection('user');
+  const userRef = collection(db,'user');
 
 
  if(email && password && confirmPassword && firstname && lastname )
@@ -43,16 +46,17 @@ const registerNewUser = () => {
      email:email,
      password:password,
     };
-    userRef.add(newUser)
+    userRef.addDoc(newUser)
   .then((docRef) => {
     console.log('Document added with ID:', docRef.id);
+    navigation.replace('Home')
   })
   .catch((error) => {
     console.error('Error adding document:', error);
-    navigation.replace('Login')
+    navigation.replace('Login');
   });
 
-  navigation.replace('Home')
+ 
     // ...
   })
   .catch((error) => {
