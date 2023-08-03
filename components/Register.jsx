@@ -6,6 +6,8 @@ import { TouchableOpacity } from 'react-native';
 import male_avatar from "../assets/male_avatar.svg"
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
+import { collection,addDoc, getFirestore,getDocs,query,where,onSnapshot,getDoc,collectionGroup } from "firebase/firestore";
+
 function Register({navigation}) {
 
 const [email,setEmail]=useState('')
@@ -13,14 +15,14 @@ const [password,setPassword]=useState('')
 const [confirmPassword,setConfirmPassword]=useState('')
 const [firstname,setFirstname]=useState('')
 const [lastname,setLastname]=useState('')
-const db = firebase.firestore();
+const db = getFirestore();
 
 
 
-console.log(navigation)
-const registerNewUser = () => {
 
-  const userRef = db.collection('user');
+const registerNewUser = async () => {
+
+  const userRef = collection(db,'user');
 
 
  if(email && password && confirmPassword && firstname && lastname )
@@ -28,38 +30,14 @@ const registerNewUser = () => {
 
    if(password===confirmPassword)
    {
+     const userCredential=await createUserWithEmailAndPassword(auth, email, password)
+     console.log(userCredential)
+      if(userCredential)
+      {
+        navigation.replace('Home')
+      }
 
 
-
-
-    createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-
-    const newUser = {
-     firstname:firstname,
-     lastname:lastname,
-     email:email,
-     password:password,
-    };
-    userRef.add(newUser)
-  .then((docRef) => {
-    console.log('Document added with ID:', docRef.id);
-  })
-  .catch((error) => {
-    console.error('Error adding document:', error);
-    navigation.replace('Login')
-  });
-
-  navigation.replace('Home')
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
 
    }
    else
@@ -81,11 +59,12 @@ else
 
 
 
+
   return (
     <View style={styles.container}>
 
     <View style={styles.loginContainer}>
-    <Text></Text>
+   
         <View>
             <Image source={male_avatar} style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}}  />
         </View>
@@ -137,6 +116,7 @@ const styles = StyleSheet.create({
     loginContainer: {
       width: '85%',
       height: '70%',
+      flex:1,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

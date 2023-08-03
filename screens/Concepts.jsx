@@ -2,7 +2,7 @@ import React ,{useState,useEffect}from 'react'
 import {View,Text,StyleSheet,FlatList} from "react-native"
 import {getConcepts} from "../components/firestore"
 import ConceptSlide from './ConceptSlide'
-
+import {ActivityIndicator} from "react-native"
 const Concept = ({navigation,route}) => {
 
   const [concepts,setConcepts]=useState([])
@@ -34,7 +34,7 @@ const Concept = ({navigation,route}) => {
 
   return (
     <View style={styles. conceptContainer}>
-    
+    {concepts.length>0?
     <FlatList
       data={concepts}
       renderItem={renderItem1}
@@ -42,7 +42,7 @@ const Concept = ({navigation,route}) => {
      
      
      
-    />
+    />:<><ActivityIndicator size={70} /></>}
  
   </View>
   )

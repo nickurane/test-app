@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import {View,Text,FlatList,StyleSheet} from "react-native"
+import { ActivityIndicator } from 'react-native';
 
 import {semDetails} from "./data"
 import { setUp } from '../components/firestore'
@@ -35,7 +36,7 @@ const Sem = ({navigation,route}) => {
     <View style={styles.semContainer}>
    
     <View>
-    {semester?
+    {semester.length>0?
     <FlatList
       data={semester}
       renderItem={renderItem}
@@ -43,7 +44,7 @@ const Sem = ({navigation,route}) => {
 
 
       numColumns={2}
-    />:<> <h1>data not found</h1> </>}
+    />: <ActivityIndicator  size={70}/>}
  
   </View>
   </View>

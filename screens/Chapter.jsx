@@ -1,5 +1,5 @@
 import React ,{useState,useEffect}from 'react'
-import {View,Text,FlatList,StyleSheet} from "react-native"
+import {View,Text,FlatList,StyleSheet, ActivityIndicator} from "react-native"
 import {data} from "./data"
 import ChapterSlide from './ChapterSlide';
 import { getChapters } from '../components/firestore';
@@ -56,7 +56,7 @@ const Chapter = ({navigation,route}) => {
 
   return (
     <View style={styles.chapterContainer}>
-    
+      {chapters.length>0?
       <FlatList
         data={chapters}
         renderItem={renderItem}
@@ -64,7 +64,7 @@ const Chapter = ({navigation,route}) => {
        
       
        
-      />
+      />:<><ActivityIndicator size={70} /></>}
    
     </View>
   )

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput,Image} from "react-native"
+import { View, Text, StyleSheet, TextInput,Image, ActivityIndicator} from "react-native"
 import { auth } from "./firebaseauth"
 import {createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
 import { TouchableOpacity } from 'react-native';
 import male_avatar from "../assets/male_avatar.svg"
+
 
 
 
@@ -12,21 +13,24 @@ function Login({navigation,route}) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isloggedin,setISLoggedIn]=useState(true)
+  const [error,setError]=useState(false)
 
   const registerNewUser = () => {
-
+         
 
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
+      console.log(userCredential)
       navigation.replace('Home')
       // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      // ..
+   
     });
   
 
@@ -36,6 +40,8 @@ function Login({navigation,route}) {
 
 
   const loginExistingUser=()=>{
+    setISLoggedIn(false)
+    setError(false)
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -47,6 +53,9 @@ function Login({navigation,route}) {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    setISLoggedIn(true)
+    setError(true)
+   
   });
 
   }
@@ -58,15 +67,23 @@ function Login({navigation,route}) {
 
   return (
     <View style={styles.container}>
+       {isloggedin==false?
+         <ActivityIndicator />
+        
+          :<Text></Text>}
 
       <View style={styles.loginContainer}>
           <View>
               <Image source={male_avatar} style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}}  />
           </View>
-
+         
       
         <TextInput placeholder="Email" onChangeText={text => setEmail(text)} style={styles.input} />
         <TextInput placeholder="Password" onChangeText={(text) => { setPassword(text) }} style={styles.input} secureTextEntry />
+        {error?
+        <View>
+          <Text style={{color:'red'}}>Wrong Username or Password</Text>
+        </View>:<Text></Text>}
         <TouchableOpacity style={styles.button} 
         
         onPress={() => {loginExistingUser() }}
