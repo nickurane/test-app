@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 import Home from "./components/Home"
 import Login from "./components/Login"
 import Register from "./components/Register"
+
+
 const Stack = createNativeStackNavigator();
 import {setUp} from "./components/firestore"
 

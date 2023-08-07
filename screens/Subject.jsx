@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import {View,Text,FlatList,StyleSheet} from "react-native"
 import Slide from "./Slide"
-
+import { ActivityIndicator } from 'react-native';
 import {getSubjects} from "../components/firestore"
 
 const Subject = ({navigation,route}) => {
@@ -33,7 +33,7 @@ const Subject = ({navigation,route}) => {
   return (
     <View style={styles.subjectContainer}>
    
-      {/* <View style={styles.subjectContainer}> */}
+     {subjects.length>0?
       <FlatList
         data={subjects}
         renderItem={renderItem}
@@ -42,8 +42,8 @@ const Subject = ({navigation,route}) => {
 
       
         numColumns={2}
-      />
-      {/* </View> */}
+      />:<><ActivityIndicator size={70} /></>}
+     
    
     </View>
   )

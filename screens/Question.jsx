@@ -3,7 +3,7 @@ import {View,Text,FlatList,StyleSheet} from "react-native"
 
 import QuestionSlide from './QuestionSlide';
 import {getQuestions} from "../components/firestore"
-
+import { ActivityIndicator } from 'react-native';
 
 
 
@@ -67,6 +67,7 @@ getData(id,path)
     <Text style={styles.txtHeading}>Correct Answered:  {correctAnswer}</Text>
     <Text style={styles.txtHeading}>Wrong Answered:   {wrongAnswer}</Text>
     </View>
+    {questions.length>0?
     <FlatList
       data={questions}
       renderItem={renderItem1}
@@ -74,7 +75,7 @@ getData(id,path)
     
       
       numColumns={1}
-    />
+    />:<><ActivityIndicator size={70} /></>}
  
   </View>
   )
