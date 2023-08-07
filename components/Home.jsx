@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,Text,Stylesheet,TextInput,TouchableOpacity, Touchable} from "react-native"
+import {View,Text,StyleSheet,TextInput,TouchableOpacity, Touchable} from "react-native"
 import Icon from 'react-native-vector-icons/AntDesign';
 
 
@@ -16,7 +16,9 @@ import Sem from "../screens/Sem"
 import Chapter from "../screens/Chapter"
 import Question from '../screens/Question';
 import Concept from "../screens/Concepts"
+import UserProfile from "../screens/UserProfile"
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import {UserCircleIcon } from "react-native-heroicons/outline";
 
 
 
@@ -28,7 +30,7 @@ const Drawer = createDrawerNavigator();
 
 function Home({navigation,route}) {
 
-
+     console.log(route,navigation)
 
   // let {routes}=navigation.getState()
   
@@ -93,9 +95,14 @@ function Home({navigation,route}) {
       ),
       headerRight: () => (
         // onPress={()=>{signOut()}}
-        <TouchableOpacity onPress={()=>{logOut()}} style={{ padding: 10}}>
-          <Text><Icon name="logout" size={20} color="white" /></Text>
+        <View style={styles.container}>
+        <TouchableOpacity onPress={()=>{navigation.navigate("UserProfile")}} style={{ margin: 15}}>
+        <UserCircleIcon size={30} color="white"/>
         </TouchableOpacity>
+        <TouchableOpacity onPress={()=>{logOut()}} style={{ margin: 15}}>
+          <Text><Icon name="logout" size={25} color="white" /></Text>
+        </TouchableOpacity>
+        </View>
       )
     }}>
   
@@ -108,51 +115,24 @@ function Home({navigation,route}) {
     <Stack.Screen name="Chapter" component={Chapter} />
     <Stack.Screen name="Concepts" component={Concept} />
     <Stack.Screen name="Question" component={Question} />
+    <Stack.Screen name="UserProfile" component={UserProfile} />
 
  </Stack.Navigator>
 
- {/* <Drawer.Navigator>
- <Drawer.Screen name="Semester" component={Sem} />
 
- <Stack.Screen name="Subject" component={Subject} 
-  
-    />
-    <Drawer.Screen name="Topic" component={Topic} />
- 
-    <Drawer.Screen name="Chapter" component={Chapter} />
-    <Drawer.Screen name="Concepts" component={Concept} />
-    <Drawer.Screen name="Question" component={Question} />
-
-
- </Drawer.Navigator> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- </>
+</>
 
     
   )
 }
+
+const styles=StyleSheet.create({
+  container:{
+    display:'flex',
+    flexDirection:'row'
+  }
+
+})
 
 
 export default Home

@@ -5,8 +5,9 @@ import {createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "fireba
 import { TouchableOpacity } from 'react-native';
 import male_avatar from "../assets/male_avatar.svg"
 import BouncyCheckbox from "react-native-bouncy-checkbox";
+import { collection,getDocsgetDoc ,getFirestore,addDoc} from "firebase/firestore";
 
-import { collection,addDoc, getFirestore,getDocs,query,where,onSnapshot,getDoc,collectionGroup } from "firebase/firestore";
+
 
 function Register({navigation}) {
 
@@ -15,6 +16,7 @@ const [password,setPassword]=useState('')
 const [confirmPassword,setConfirmPassword]=useState('')
 const [firstname,setFirstname]=useState('')
 const [lastname,setLastname]=useState('')
+const [phoneNumber,setPhoneNumber]=useState(0)
 const db = getFirestore();
 
 
@@ -23,15 +25,32 @@ const db = getFirestore();
 const registerNewUser = async () => {
 
   const userRef = collection(db,'user');
+  console.log(userRef);
+  if(phoneNumber.length!=10)
+  alert("wrong phone number")
 
 
- if(email && password && confirmPassword && firstname && lastname )
+ if(email && password && confirmPassword && firstname && lastname && phoneNumber)
  {
+
+  let data={
+    email:email,
+    password:password,
+    firstname:firstname,
+    lastname:lastname
+  }
 
    if(password===confirmPassword)
    {
-     const userCredential=await createUserWithEmailAndPassword(auth, email, password)
-     console.log(userCredential)
+    const userCredential=await createUserWithEmailAndPassword(auth, email, password)
+    addDoc(userRef , data)
+  .then((docRef) => {
+    console.log("Document written with ID:");
+  })
+  .catch((error) => {
+    console.error("Error adding document: ");
+  });
+
       if(userCredential)
       {
         navigation.replace('Home')
@@ -71,6 +90,14 @@ else
         <TextInput placeholder="Firstname" onChangeText={text => setFirstname(text)} style={styles.input} />
         <TextInput placeholder="Lastname" onChangeText={text => setLastname(text)} style={styles.input} />
       <TextInput placeholder="Email" onChangeText={text => setEmail(text)} style={styles.input} />
+      <TextInput
+        style={styles.input}
+        keyboardType="numeric"
+        maxLength={10} // Set the maximum length of the input
+       
+        onChangeText={text => setPhoneNumber(text)}
+        placeholder="+91"
+      />
       <TextInput placeholder="Password" onChangeText={(text) => { setPassword(text) }} style={styles.input} secureTextEntry />
       <TextInput placeholder="Confirm Password" onChangeText={(text) => { setConfirmPassword(text) }} style={styles.input} secureTextEntry />
     
@@ -156,4 +183,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default Register
+export default Register;

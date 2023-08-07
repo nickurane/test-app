@@ -47,7 +47,7 @@ function Login({navigation,route}) {
     // Signed in 
     const user = userCredential.user;
    
-    navigation.replace('Home')
+    navigation.replace('Home',{email:email,password:password})
     // ...
   })
   .catch((error) => {
