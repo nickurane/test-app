@@ -420,7 +420,7 @@ const styles=StyleSheet.create({
     borderWidth:1,
     flex:1,
     justifyContent:'center',
-    backgroundColor:'#dae7e6'
+    backgroundColor:'#dee1e6'
 
   },
   optionContainer:{

@@ -7,7 +7,7 @@ console.log("chapter slide path",path)
     
    
   return (
-    <TouchableOpacity style={[styles.container,{backgroundColor:'#dae7e6'}]}
+    <TouchableOpacity style={[styles.container,{backgroundColor:'#dee1e6'}]}
     onPress={()=>{navigation.navigate('Concepts',{"id":item.id,'path':path})}} 
     
     >
