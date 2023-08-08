@@ -1,54 +1,70 @@
-import React ,{useEffect}from 'react'
+import React ,{useEffect,useState}from 'react'
 import {View,Text,StyleSheet,TextInput, TouchableOpacity} from "react-native"
 import { ScrollView } from 'react-native-gesture-handler';
 import {UserCircleIcon } from "react-native-heroicons/outline";
-import { collection, getDocsgetDoc, getFirestore, addDoc,query,where } from "firebase/firestore";
+import { collection, getDocs,getDoc, getFirestore, addDoc,query,where } from "firebase/firestore";
 import { auth } from "../components/firebaseauth"
 
 
 const UserProfile=({route,navigation})=> {
 
+  const [emailid, setEmailid] = useState('')
+  const [password, setPassword] = useState('')
 
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setLastname] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState(0)
 
 const {email}=route.params.data
 console.log(email)
 
-const getDocs=async ()=>{
+const getDocument=async ()=>{
+  try {
+    const db=getFirestore();
+    const userRef=collection(db, "user")
+    console.log(userRef)
+    const q=  query(userRef, where("email", "==", email))
+    console.log(q)
+    const querySnapshot = await getDocs(q);
+    console.log(querySnapshot)
+    
+    // Process the results
+    querySnapshot?.forEach((doc) => {
+      // Document data is available in doc.data()
+      const data = doc.data();
+      console.log("Document data:", data);
+     if(data)
+     {
+      setEmailid(data?.email)
+      setFirstname(data?.firstname)
+      setLastname(data?.lastname)
+      setPhoneNumber(data.phoneNumber)
 
-  const db=getFirestore();
-  const querySnapshot = await getDocs(
-    query(collection(db, "users"), where("email", "==", email))
-  );
+
+     }
+    });
   
-  // Process the results
-  querySnapshot.forEach((doc) => {
-    // Document data is available in doc.data()
-    const data = doc.data();
-    console.log("Document data:", data);
-  });
-
-
+  
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+  
+  
   
 
 }
 
 useEffect(()=>{
-  getDocs()
+  getDocument()
 },[])
 
 
 
   return (
-<<<<<<< HEAD
-    <View>
-      <View style={styles.container} >
-        <UserCircleIcon />
-=======
     <ScrollView>
     <View style={styles.container} >
       <View style={styles.imgcontainer} >
         <UserCircleIcon size={60} />
->>>>>>> aa0e99368cf026800dfcc97a0b543726be3f816d
       </View>
        <View>
         <View style={styles.inputContainer}>
@@ -56,7 +72,7 @@ useEffect(()=>{
          <TextInput 
           style={styles.input}
           placeholder='Fisrtname'
-
+         value={firstname.toUpperCase()}
          
          />
         </View>
@@ -66,6 +82,7 @@ useEffect(()=>{
         <TextInput 
           style={styles.input}
           placeholder='Lastname'
+          value={lastname.toUpperCase()}
          
          />
         </View>
@@ -74,6 +91,7 @@ useEffect(()=>{
         <TextInput 
           style={styles.input}
           placeholder='Email'
+          value={emailid}
          
          />
         </View>
@@ -82,6 +100,7 @@ useEffect(()=>{
         <TextInput 
           style={styles.input}
           placeholder='Phone No.'
+          value={phoneNumber}
          
          />
         </View>
@@ -99,12 +118,6 @@ useEffect(()=>{
 }
 
 const styles=StyleSheet.create({
-<<<<<<< HEAD
-container:{
-  flex:1,
-  alignItems:'center'
-}
-=======
   container:{
     flex:1,
     display:'flex',
@@ -162,7 +175,6 @@ container:{
   fontWeight:'bold',
   fontSize:15,
  }
->>>>>>> aa0e99368cf026800dfcc97a0b543726be3f816d
 })
 
 export default UserProfile
