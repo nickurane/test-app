@@ -32,6 +32,8 @@ function Home({navigation,route}) {
 
      console.log(route,navigation)
 
+   const  data=route.params;
+
   // let {routes}=navigation.getState()
   
 
@@ -96,7 +98,7 @@ function Home({navigation,route}) {
       headerRight: () => (
         // onPress={()=>{signOut()}}
         <View style={styles.container}>
-        <TouchableOpacity onPress={()=>{navigation.navigate("UserProfile")}} style={{ margin: 15}}>
+        <TouchableOpacity onPress={()=>{navigation.navigate("UserProfile",{data:data})}} style={{ margin: 15}}>
         <UserCircleIcon size={30} color="white"/>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>{logOut()}} style={{ margin: 15}}>

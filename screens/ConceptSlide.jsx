@@ -32,7 +32,7 @@ console.log(path)
 const styles=StyleSheet.create({
     slideContainer:{
       height:50,
-      backgroundColor:'#dae7e6',
+      backgroundColor:'#dee1e6',
       display:'flex',
       justifyContent:'center',
       alignItems:'center',
