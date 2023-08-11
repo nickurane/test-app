@@ -42,7 +42,9 @@ const Subject = ({navigation,route}) => {
 
       
         numColumns={2}
-      />:<><ActivityIndicator size={70} /></>}
+      />:<>  <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+      <ActivityIndicator size={70} />
+      </View></>}
      
    
     </View>

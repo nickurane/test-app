@@ -33,10 +33,11 @@ const Sem = ({navigation,route}) => {
 
 
   return (
-    <View style={styles.semContainer}>
+    <>
    
-    <View>
+  
     {semester.length>0?
+      <View style={styles.semContainer}>
     <FlatList
       data={semester}
       renderItem={renderItem}
@@ -44,18 +45,22 @@ const Sem = ({navigation,route}) => {
 
 
       numColumns={2}
-    />: <ActivityIndicator  size={70}/>}
+    /> </View>:<View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+    <ActivityIndicator size={70} />
+    </View>}
  
-  </View>
-  </View>
+ 
+  </>
   )
 }
 const styles=StyleSheet.create({
     semContainer:{
-      flex:1,
+   
       marginHorizontal:10,
       marginVertical:4,
-      backgroundColor:'smokewhite'
+      backgroundColor:'smokewhite',
+   
+
     
       
      
