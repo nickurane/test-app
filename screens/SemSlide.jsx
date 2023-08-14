@@ -1,11 +1,11 @@
 import React from 'react'
-import {View,Text,StyleSheet,TouchableOpacity,Image} from "react-native"
+import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
 // import { Image } from 'expo-image';
 import first_year from "../assets/first_year.svg"
 
 const SemSlide = ({item,navigation}) => {
   
-  
+  console.log(item)
 
     
   return (
@@ -15,7 +15,7 @@ const SemSlide = ({item,navigation}) => {
    style={[styles.SemSlideContainer]}>
     <View >
    
-     <Text style={styles.headingTxt}>{item.sem} Sem</Text>
+     <Text style={styles.headingTxt}><Text>{item.sem}</Text>Sem</Text>
     
      </View>
     </TouchableOpacity>

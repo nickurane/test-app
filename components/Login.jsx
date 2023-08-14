@@ -3,7 +3,8 @@ import { View, Text, StyleSheet, TextInput,Image, ActivityIndicator} from "react
 import { auth } from "./firebaseauth"
 import {createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
 import { TouchableOpacity } from 'react-native';
-import male_avatar from "../assets/male_avatar.svg"
+import Avatar from "../assets/male_avatar.svg"
+import { SvgUri } from 'react-native-svg';
 
 
 
@@ -23,7 +24,7 @@ function Login({navigation,route}) {
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      console.log(userCredential)
+     
       navigation.replace('Home')
       // ...
     })
@@ -70,11 +71,17 @@ function Login({navigation,route}) {
        {isloggedin==false?
          <ActivityIndicator />
         
-          :<Text></Text>}
+          :<></>}
 
       <View style={styles.loginContainer}>
           <View>
-              <Image source={male_avatar} style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}}  />
+              {/* <Avatar  style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}}  /> */}
+              {/* <SvgUri
+              style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}} 
+  
+    uri="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/debian.svg"
+/> */}
+
           </View>
          
       
@@ -83,7 +90,7 @@ function Login({navigation,route}) {
         {error?
         <View>
           <Text style={{color:'red'}}>Wrong Username or Password</Text>
-        </View>:<Text></Text>}
+        </View>:<></>}
         <TouchableOpacity style={styles.button} 
         
         onPress={() => {loginExistingUser() }}
@@ -117,17 +124,17 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     backgroundColor: 'white',
     marginVertical: 5,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     padding: 10,
     width: '80%',
   },
   loginContainer: {
+    
     width: '85%',
-    height: '70%',
-    display: 'flex',
+   
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 25,
+    paddingVertical:20,
     borderRadius: 15,
     borderWidth: 1,
     borderColor: 'black',

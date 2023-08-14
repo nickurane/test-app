@@ -18,7 +18,7 @@ import Question from '../screens/Question';
 import Concept from "../screens/Concepts"
 import UserProfile from "../screens/UserProfile"
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import {UserCircleIcon } from "react-native-heroicons/outline";
+import {UserCircleIcon ,ArrowLeftIcon} from "react-native-heroicons/outline";
 
 
 
@@ -86,12 +86,10 @@ function Home({navigation,route}) {
         
       },
       headerLeft: () => (
-        route.name!="Semester"?
-       <TouchableOpacity onPress={()=>{navigation.goBack()}}>
-        <View style={{ padding: 10}}>
-        <Icon name="back" size={20} color="white" />
-        </View>
-       </TouchableOpacity>:<></>
+      //    
+      
+
+      <></>
 
         
       ),
