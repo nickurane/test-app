@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput, Image } from "react-native"
+import { View, Text, StyleSheet, TextInput, Image,SafeAreaView, ScrollView } from "react-native"
 import { auth } from "./firebaseauth"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { TouchableOpacity } from 'react-native';
 import male_avatar from "../assets/male_avatar.svg"
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { collection, getDocsgetDoc, getFirestore, addDoc } from "firebase/firestore";
+import { SvgUri } from 'react-native-svg';
 
 
 
@@ -75,12 +76,18 @@ function Register({ navigation }) {
 
 
   return (
+    
     <View style={styles.container}>
-
-      <View style={styles.loginContainer}>
+<ScrollView style={styles.loginContainer}>
+      <View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
 
         <View>
           <Image source={male_avatar} style={{ width: 100, height: 100, marginBottom: 15, borderWidth: 1.5, borderRadius: 80 }} />
+          <SvgUri
+              style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}} 
+  
+    uri="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/debian.svg"
+/>
         </View>
         <TextInput placeholder="Firstname" onChangeText={text => setFirstname(text)} style={styles.input} />
         <TextInput placeholder="Lastname" onChangeText={text => setLastname(text)} style={styles.input} />
@@ -113,8 +120,9 @@ function Register({ navigation }) {
 
       </View>
 
-
+      </ScrollView>
     </View>
+  
   )
 }
 
@@ -123,29 +131,32 @@ function Register({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    display:'flex',
+    backgroundColor:'black',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems:'center'
+ 
   },
   input: {
     borderWidth: 1,
     borderColor: 'black',
     backgroundColor: 'white',
     marginVertical: 5,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     padding: 10,
     width: '80%',
   },
   loginContainer: {
-    width: '85%',
-    height: '70%',
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 25,
-    borderRadius: 15,
-    borderWidth: 1,
-    borderColor: 'black',
+    width: '95%',
+   
+  
+ 
+    // justifyContent: 'center',
+    // alignItems: 'center',
+
+   
+
+   
   },
   button: {
     marginTop: 7,

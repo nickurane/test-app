@@ -2,9 +2,10 @@ import React ,{useEffect,useState}from 'react'
 import {View,Text,StyleSheet,TextInput, TouchableOpacity} from "react-native"
 import { ScrollView } from 'react-native-gesture-handler';
 import {UserCircleIcon, } from "react-native-heroicons/outline";
-import {PencilIcon, } from "react-native-heroicons/solid";
+import {PencilIcon, } from "react-native-heroicons/outline";
 import { collection, getDocs,getDoc, getFirestore, addDoc,query,where,doc,updateDoc ,update} from "firebase/firestore";
 import { auth } from "../components/firebaseauth"
+
 
 
 const UserProfile=({route,navigation})=> {
@@ -90,10 +91,10 @@ const updateUserDoc = async () => {
       // Use the update function on the document reference
       updateDoc(documentRef, updateData)
         .then(() => {
-          console.log("Document successfully updated!");
+          alert("Document successfully updated!");
         })
         .catch((error) => {
-          console.error("Error updating document: ", error);
+          alert("Error updating document: ", error);
         });
     });
   } catch (error) {
@@ -107,8 +108,9 @@ const updateUserDoc = async () => {
   return (
     <ScrollView>
     <View style={styles.container} >
+     
       <View style={styles.imgcontainer} >
-        <UserCircleIcon size={60} />
+        <UserCircleIcon size={80} color="black" />
       </View>
        <View>
        <View style={styles.inputContainer}>
@@ -182,7 +184,9 @@ const updateUserDoc = async () => {
         </View>
        
        </View>
-      
+       <View>
+        
+      </View>
     </View>
     </ScrollView>
   )
@@ -192,7 +196,7 @@ const styles=StyleSheet.create({
   container:{
     flex:1,
     display:'flex',
-  
+    backgroundColor:'#f2f2f2',
     
     marginTop:25,
     borderWidth:1,
@@ -237,10 +241,16 @@ const styles=StyleSheet.create({
   backgroundColor:'green',
   paddingHorizontal:35,
   marginTop:15,
+  width:'100%',
+  flex:1,
+  display:'flex',
+  justifyContent:'center',
+  alignItems:'center',
+  
 
  },
  saveBtnContainer:{
-  
+  flex:1,
   display:'flex',
   justifyContent:'center',
   alignItems:'center',
@@ -249,6 +259,7 @@ const styles=StyleSheet.create({
   color:'white',
   fontWeight:'bold',
   fontSize:15,
+  textAlign:'center'
  }
 })
 

@@ -15,7 +15,7 @@ const Sem = ({navigation,route}) => {
   const getData=async ()=>{
     let s=await setUp()
     setSem(s)
-    console.log(semester);
+    
   }
  
  
@@ -24,7 +24,7 @@ const Sem = ({navigation,route}) => {
    
   },[])
 
- console.log(route,navigation)
+
 
   const renderItem = ({ item }) => {
     return < SemSlide item={item} navigation={navigation} />;
@@ -34,10 +34,10 @@ const Sem = ({navigation,route}) => {
 
   return (
     <>
-   
+     <View style={styles.semContainer}>
   
     {semester.length>0?
-      <View style={styles.semContainer}>
+    
     <FlatList
       data={semester}
       renderItem={renderItem}
@@ -45,9 +45,12 @@ const Sem = ({navigation,route}) => {
 
 
       numColumns={2}
-    /> </View>:<View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-    <ActivityIndicator size={70} />
-    </View>}
+    /> :
+    // <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+    <ActivityIndicator size={50} />
+    // </View>
+    }
+    </View>
  
  
   </>
