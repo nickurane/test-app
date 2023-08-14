@@ -68,7 +68,9 @@ function Login({navigation,route}) {
   return (
     <View style={styles.container}>
        {isloggedin==false?
+         <View style={styles.loadingContainer}>
          <ActivityIndicator />
+         </View>
         
           :<Text></Text>}
 
@@ -131,6 +133,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderWidth: 1,
     borderColor: 'black',
+    zIndex:2,
   },
   button: {
     marginTop: 7,
@@ -161,6 +164,13 @@ const styles = StyleSheet.create({
     color: '#383CC1',
     fontWeight: 'bold',
   },
+  loadingContainer:{
+    position:'absolute',
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+    zIndex:10,
+  }
 });
 
 export default Login
