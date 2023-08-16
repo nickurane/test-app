@@ -119,7 +119,7 @@ const updateUserDoc = async () => {
           style={styles.input}
           placeholder='Email'
           onChangeText={(text)=>{setEmailid(text)}}
-          disabled={statusemailid}
+          disabled={true}
           value={emailid}
          
          />

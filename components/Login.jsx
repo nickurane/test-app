@@ -5,6 +5,7 @@ import {createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "fireba
 import { TouchableOpacity } from 'react-native';
 import Avatar from "../assets/male_avatar.svg"
 import { SvgUri } from 'react-native-svg';
+import {UserCircleIcon ,ArrowLeftIcon} from "react-native-heroicons/outline";
 
 
 
@@ -16,6 +17,8 @@ function Login({navigation,route}) {
   const [password, setPassword] = useState('')
   const [isloggedin,setISLoggedIn]=useState(true)
   const [error,setError]=useState(false)
+  const [emptyEmail,setEmptyEmail]=useState(false)
+  const [emptyPassword,setEmptyPassword]=useState(false)
 
   const registerNewUser = () => {
          
@@ -41,8 +44,12 @@ function Login({navigation,route}) {
 
 
   const loginExistingUser=()=>{
-    setISLoggedIn(false)
-    setError(false)
+   
+    if(email && password)
+    {
+
+      setISLoggedIn(false)
+      setError(false)
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
@@ -56,9 +63,18 @@ function Login({navigation,route}) {
     const errorMessage = error.message;
     setISLoggedIn(true)
     setError(true)
+    setEmptyEmail(false);
+    setEmptyPassword(false);
    
   });
-
+    }
+    else
+    {
+      
+      setEmptyEmail(true);
+      setEmptyPassword(true);
+      setError(false)
+    }
   }
 
   
@@ -74,19 +90,21 @@ function Login({navigation,route}) {
           :<></>}
 
       <View style={styles.loginContainer}>
-          <View>
-              {/* <Avatar  style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}}  /> */}
-              {/* <SvgUri
-              style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}} 
-  
-    uri="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/debian.svg"
-/> */}
-
-          </View>
+      <View >
+        <UserCircleIcon size={80} color="black" />
+      </View>
          
       
         <TextInput placeholder="Email" onChangeText={text => setEmail(text)} style={styles.input} />
+        {emptyEmail?
+        <View>
+          <Text style={{color:'red'}}>Please Enter Email</Text>
+        </View>:<></>}
         <TextInput placeholder="Password" onChangeText={(text) => { setPassword(text) }} style={styles.input} secureTextEntry />
+        {emptyPassword?
+        <View>
+          <Text style={{color:'red'}}>Please Enter Password</Text>
+        </View>:<></>}
         {error?
         <View>
           <Text style={{color:'red'}}>Wrong Username or Password</Text>

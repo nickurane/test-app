@@ -37,7 +37,8 @@ function Register({ navigation }) {
         email: email,
         password: password,
         firstname: firstname,
-        lastname: lastname
+        lastname: lastname,
+        phoneNumber:phoneNumber
       }
 
       if (password === confirmPassword) {
@@ -51,7 +52,7 @@ function Register({ navigation }) {
           });
 
         if (userCredential) {
-          navigation.replace('Home')
+          navigation.replace('Home',{email:email,password:password})
         }
 
 
@@ -76,7 +77,8 @@ function Register({ navigation }) {
 
 
   return (
-    
+  
+  
     <View style={styles.container}>
 <ScrollView style={styles.loginContainer}>
       <View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
@@ -122,7 +124,7 @@ function Register({ navigation }) {
 
       </ScrollView>
     </View>
-  
+
   )
 }
 
@@ -132,14 +134,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     display:'flex',
-    backgroundColor:'black',
+   
     justifyContent: 'center',
     alignItems:'center'
  
   },
   input: {
     borderWidth: 1,
-    borderColor: 'black',
+   
     backgroundColor: 'white',
     marginVertical: 5,
     marginHorizontal: 10,
@@ -147,8 +149,14 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   loginContainer: {
-    width: '95%',
-   
+    width:'90%',
+    flex:1,
+     marginVertical:50,
+     borderRadius:20,
+ 
+    borderColor:'black',
+    borderWidth:1,
+
   
  
     // justifyContent: 'center',
