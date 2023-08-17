@@ -94,7 +94,7 @@ function Home({navigation,route}) {
        </View>
       </TouchableOpacity>:<></>
 
-   
+    
 
         
       ),
