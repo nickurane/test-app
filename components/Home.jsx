@@ -87,9 +87,14 @@ function Home({navigation,route}) {
       },
       headerLeft: () => (
       //    
-      
+      route.name!="Semester"?
+      <TouchableOpacity onPress={()=>{navigation.goBack()}}>
+       <View style={{ padding: 10}}>
+       <ArrowLeftIcon  size={20} color="white" />
+       </View>
+      </TouchableOpacity>:<></>
 
-      <></>
+   
 
         
       ),
