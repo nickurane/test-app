@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/playstore.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.nikhilkurane76.testapp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/playstore.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "313a5365-851e-4ba9-9734-ca779228bd0d"
+      }
     }
   }
 }
