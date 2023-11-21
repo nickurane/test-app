@@ -17,149 +17,7 @@ const QuestionSlide = ({item,setCorrectAnswer, setWrongAnswer}) => {
     <View style={styles.questionContainer}>
         <Text style={styles.question}>{item.question}</Text>
         <View style={[styles.optionContainer,]} >
-{/*        
-          <TouchableOpacity style={[styles.questionTxt,{backgroundColor:option1}]}
-          onPress={()=>{
-            if( item.a===item.correct_answer)
-           {
-            setOption1('green')
-            setCorrectAnswer(prev=>prev+1)
-           }
-           else
-           {
-            setOption1('red')
-            setWrongAnswer(prev=>prev+1)
 
-           }
-      
-       
-
-           
-           console.log("pressed")
-           setDisable(true)
-           }}
-           disabled={disable}
-          
-          >
-             <BouncyCheckbox
-  size={25}
-  fillColor="green"
-  unfillColor="white"
-  text="Custom Checkbox"
-  iconStyle={{ borderColor: "red" }}
-  innerIconStyle={{ borderWidth: 2 }}
-  textStyle={{ fontFamily: " " }}
-  iconComponent={
-    <Ionicons
-      name="ios-close" 
-      style={{color:'white'}}
-      size={24}
-      color={isChecked ? '#FFFFFF' : '#000000'} // Change this color to the color you want for the cross icon
-    />}
-
-/>
-          
-            <Text>{item.a}
-            </Text>
-            
-            </TouchableOpacity>
-           
-            <TouchableOpacity style={[styles.questionTxt,{backgroundColor:option2}]}
-          onPress={()=>{
-            if( item.b===item.correct_answer)
-            {
-             setOption2('green')
-             setCorrectAnswer(prev=>prev+1)
-            }
-            else
-            {
-             setOption2('red')
-             setWrongAnswer(prev=>prev+1)
- 
-            }
-           setDisable(true)
-          }}
-          disabled={disable}
-          
-          >
-          <BouncyCheckbox
-  size={25}
-  fillColor="red"
-  unfillColor="#FFFFFF"
-  text="Custom Checkbox"
-  iconStyle={{ borderColor: "red" }}
-  innerIconStyle={{ borderWidth: 2 }}
-  textStyle={{ fontFamily: "JosefinSans-Regular" }}
-
-/>
-            <Text>{item.b}
-            </Text>
-            
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.questionTxt,{backgroundColor:option3}]}
-          onPress={()=>{
-            if( item.c===item.correct_answer)
-            {
-             setOption3('green')
-             setCorrectAnswer(prev=>prev+1)
-            }
-            else
-            {
-             setOption3('red')
-             setWrongAnswer(prev=>prev+1)
- 
-            }
-            setDisable(true)
-          }}
-          disabled={disable}
-          
-          >
-          <BouncyCheckbox
-  size={25}
-  fillColor="red"
-  unfillColor="#FFFFFF"
-  text="Custom Checkbox"
-  iconStyle={{ borderColor: "red" }}
-  innerIconStyle={{ borderWidth: 2 }}
-  textStyle={{ fontFamily: "JosefinSans-Regular" }}
-
-/>
-            <Text>{item.c}
-            </Text>
-            
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.questionTxt,{backgroundColor:option4}]}
-          onPress={()=>{
-            if( item.d===item.correct_answer)
-           {
-            setOption4('green')
-            setCorrectAnswer(prev=>prev+1)
-           }
-           else
-           {
-            setOption4('red')
-            setWrongAnswer(prev=>prev+1)
-
-           }
-            setDisable(true)
-          }}
-          disabled={disable}
-          
-          >
-          <BouncyCheckbox
-  size={25}
-  fillColor="red"
-  unfillColor="#FFFFFF"
- 
-  iconStyle={{ borderColor: "red" }}
-  innerIconStyle={{ borderWidth: 2 }}
-  textStyle={{ fontFamily: "JosefinSans-Regular" }}
- 
-/>
-            <Text>{item.d}
-            </Text>
-            
-            </TouchableOpacity> */}
    <BouncyCheckbox
   size={25}
   fillColor={option1}
@@ -444,7 +302,7 @@ const styles=StyleSheet.create({
 ,
 ansContainer:{
   
-  display:'flex',
+  flex:1,
   justifyContent:'center',
   alignItems:'center',
   backgroundColor:'green',

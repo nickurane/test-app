@@ -5,7 +5,7 @@ import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
 const ConceptSlide = ({navigation,item,path}) => {
 
 
-console.log(path)
+
  
 
 
@@ -33,7 +33,7 @@ const styles=StyleSheet.create({
     slideContainer:{
       height:50,
       backgroundColor:'#dee1e6',
-      display:'flex',
+      flex:1,
       justifyContent:'center',
       alignItems:'center',
       flexDirection:'row',
@@ -43,9 +43,9 @@ const styles=StyleSheet.create({
     },
     txtContainer:{
     
-      display:'flex',
+      flex:1,
       flexDirection:'row',
-      display:'flex',
+      flex:1,
       justifyContent:'center',
       alignItems:'center',
       gap:5,

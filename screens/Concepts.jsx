@@ -10,13 +10,13 @@ const Concept = ({navigation,route}) => {
 
  
   let {id,path}=route.params
-  console.log("concepts",id,path)
+ 
  
     const getData=async (id,path)=>{
       let s= await getConcepts(id,path)
-      console.log("concepts:",s);
+  
       setConcepts(s)
-      console.log(concepts)
+      
      
     }
    

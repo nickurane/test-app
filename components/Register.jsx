@@ -26,7 +26,7 @@ function Register({ navigation }) {
   const registerNewUser = async () => {
 
     const userRef = collection(db, 'user');
-    console.log(userRef);
+ 
     if (phoneNumber.length != 10)
       alert("wrong phone number")
 
@@ -45,10 +45,10 @@ function Register({ navigation }) {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password)
         addDoc(userRef, data)
           .then((docRef) => {
-            console.log("Document written with ID:");
+            
           })
           .catch((error) => {
-            console.error("Error adding document: ");
+      
           });
 
         if (userCredential) {

@@ -27,7 +27,7 @@ const setUp = async () => {
 
 const getSubjects = async (id) => {
 
-  console.log(id)
+
   const db = getFirestore();
   const postsQuery = collection(db, "sem", id, "subject");
   let subjects = [];
@@ -44,7 +44,7 @@ const getSubjects = async (id) => {
    
 };
 const getChapters = async (id,path) => {
-  console.log(id,path)
+ 
   const db = getFirestore();
   const  postsQuery  = collection(db, "sem",path.sem_id,"subject",id,"chapter");
   let chapters = [];
@@ -57,7 +57,7 @@ const getChapters = async (id,path) => {
      
 
     })
-  //  console.log(id)
+
 
 //   const chapterRef = collection(db, 'subject', id, 'chapter');
 //   const q = query(chapterRef);
@@ -72,7 +72,7 @@ const getChapters = async (id,path) => {
 
 
 
-// console.log(chapters)
+
 
 
 
@@ -103,8 +103,8 @@ const getConcepts= async (id,path) => {
 
 
 const getQuestions= async (id,path) => {
-  console.log(path)
-  const db = getFirestore();
+
+   const db = getFirestore();
   const  postsQuery  = collection(db, "sem",path.sem_id,"subject",path.sub_id,"chapter",path.cha_id,"concepts",id,"question");
   let questions = [];
   const querySnapshot=await getDocs(postsQuery)
@@ -116,7 +116,7 @@ const getQuestions= async (id,path) => {
      
 
     })
-    console.log(questions)
+   
     return questions;
    
 };

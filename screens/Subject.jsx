@@ -9,11 +9,10 @@ const Subject = ({navigation,route}) => {
 
   const [subjects,setSubjects]=useState([])
 
-   console.log(route.params.id)
-
+   
   const getData=async (id)=>{
     let s= await getSubjects(id)
-    console.log("subject:",s);
+
     setSubjects(s)
    
   }

@@ -3,7 +3,7 @@ import {View,Text,StyleSheet,TouchableOpacity} from "react-native"
 
 
 const ChapterSlide= ({item,navigation,path}) => {
-console.log("chapter slide path",path)
+
     
    
   return (
@@ -24,7 +24,7 @@ const styles=StyleSheet.create({
   container:{
     height:50,
    
-    display:'flex',
+     flex:1,
     justifyContent:'center',
     alignItems:'center',
     flexDirection:'row',
@@ -34,9 +34,9 @@ const styles=StyleSheet.create({
   },
   txtContainer:{
     
-    display:'flex',
+    flex:1,
     flexDirection:'row',
-    display:'flex',
+    flex:1,
     justifyContent:'space-between',
     alignItems:'center',
     gap:5,

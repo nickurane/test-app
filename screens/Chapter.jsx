@@ -10,15 +10,13 @@ import { getChapters } from '../components/firestore';
 const Chapter = ({navigation,route}) => {
  
   const [chapters,setChapters]=useState([])
-  console.log(route,navigation)
-
-  console.log(route.params.id,route.params.path)
+ 
 
 
 
   const getData=async (id,path)=>{
     let s= await getChapters(id ,path)
-    console.log("chapters:",s);
+   
     setChapters(s)
   
    

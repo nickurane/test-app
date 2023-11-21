@@ -30,7 +30,7 @@ const Drawer = createDrawerNavigator();
 
 function Home({navigation,route}) {
 
-     console.log(route,navigation)
+    
 
    const  data=route.params;
 

@@ -26,24 +26,24 @@ const UserProfile=({route,navigation})=> {
 
 
 const {email}=route.params.data
-console.log(email)
+
 const db=getFirestore();
 const userRef=collection(db, "user")
 
 const getDocument=async ()=>{
   try {
  
-    console.log(userRef)
+  
     const q=  query(userRef, where("email", "==", email))
-    console.log(q)
+    
     const querySnapshot = await getDocs(q);
-    console.log(querySnapshot)
+    
     
     // Process the results
     querySnapshot?.forEach((doc) => {
       // Document data is available in doc.data()
       const data = doc.data();
-      console.log("Document data:", data);
+     
      if(data)
      {
       setEmailid(data?.email)
@@ -195,7 +195,7 @@ const updateUserDoc = async () => {
 const styles=StyleSheet.create({
   container:{
     flex:1,
-    display:'flex',
+   
     backgroundColor:'#f2f2f2',
     
     marginTop:25,
@@ -207,7 +207,7 @@ const styles=StyleSheet.create({
   },
   inputContainer:{
     flex:1,
-    display:'flex',
+    
     flexDirection:'row',
     alignItems:'center',
   
@@ -216,7 +216,7 @@ const styles=StyleSheet.create({
   },
   imgcontainer:{
     flex:1,
-    display:'flex',
+   
   
     alignItems:'center',
     marginVertical:15,
@@ -243,7 +243,7 @@ const styles=StyleSheet.create({
   marginTop:15,
   width:'100%',
   flex:1,
-  display:'flex',
+  
   justifyContent:'center',
   alignItems:'center',
   
@@ -251,7 +251,7 @@ const styles=StyleSheet.create({
  },
  saveBtnContainer:{
   flex:1,
-  display:'flex',
+
   justifyContent:'center',
   alignItems:'center',
  },

@@ -14,13 +14,13 @@ const [wrongAnswer,setWrongAnswer]=useState(0)
 const [questions,setQuestions]=useState([])
 
 let {id,path}=route.params;
-console.log(id,path)
+
 
 const getData=async (id,path)=>{
   let s= await getQuestions(id,path)
-  console.log("questions:",s);
+
 setQuestions(s)
-  console.log(questions)
+ 
  
 }
 
@@ -90,7 +90,7 @@ const styles=StyleSheet.create({
     borderRadius:10,
     borderWidth:1,
     height:90,
-    display:'flex',
+    flex:1,
     justifyContent:'space-between',
     alignItems:'center',
     flexDirection:'row',

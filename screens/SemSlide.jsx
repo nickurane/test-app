@@ -5,7 +5,7 @@ import first_year from "../assets/first_year.svg"
 
 const SemSlide = ({item,navigation}) => {
   
-  console.log(item)
+ 
 
     
   return (
