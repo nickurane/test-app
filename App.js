@@ -6,10 +6,13 @@ import { useEffect } from 'react';
 import Home from "./components/Home"
 import Login from "./components/Login"
 import Register from "./components/Register"
+import { ScrollView, NativeViewGestureHandler } from 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 
 
 const Stack = createNativeStackNavigator();
-import {setUp} from "./components/firestore"
+
 
 export default function App() {
 
@@ -20,7 +23,12 @@ export default function App() {
 
 
   return (
-   
+    <>
+
+
+      {/* <ScrollView> */}
+        
+           
     <NavigationContainer>
     <Stack.Navigator initialRouteName='Login'
     screenOptions={{
@@ -37,6 +45,15 @@ export default function App() {
 
   </Stack.Navigator>
   </NavigationContainer>
+
+
+
+      
+        
+      {/* </ScrollView> */}
+    
+  
+  </>
  
   );
 }

@@ -84,18 +84,19 @@ getData(id,path)
 }
 const styles=StyleSheet.create({
   scoreContainer:{
-   
+  
     borderColor:'black',
-    padding:10,
+    
     borderRadius:10,
     borderWidth:1,
-    height:90,
-    flex:1,
+    height:70,
+   
     justifyContent:'space-between',
     alignItems:'center',
     flexDirection:'row',
     paddingHorizontal:35,
-    backgroundColor:'#6528f7'
+    backgroundColor:'#6528f7',
+    marginHorizontal:9
   },
   txtHeading:{
     color:'white',

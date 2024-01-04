@@ -84,9 +84,9 @@ function Register({ navigation }) {
       <View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
 
         <View>
-          <Image source={male_avatar} style={{ width: 100, height: 100, marginBottom: 15, borderWidth: 1.5, borderRadius: 80 }} />
+        
           <SvgUri
-              style={{width:100,height:100,marginBottom:15,borderWidth:1.5,borderRadius:80}} 
+              style={{width:100,height:100,marginVertical:25,borderWidth:1.5,borderRadius:80}} 
   
     uri="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/debian.svg"
 />
@@ -136,7 +136,8 @@ const styles = StyleSheet.create({
     display:'flex',
    
     justifyContent: 'center',
-    alignItems:'center'
+    alignItems:'center',
+
  
   },
   input: {
@@ -151,11 +152,13 @@ const styles = StyleSheet.create({
   loginContainer: {
     width:'90%',
     flex:1,
-     marginVertical:50,
+     marginVertical:70,
      borderRadius:20,
- 
-    borderColor:'black',
-    borderWidth:1,
+  backgroundColor:'#f7f7f7',
+    borderColor:'gray',
+   
+    
+
 
   
  

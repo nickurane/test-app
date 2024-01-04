@@ -15,6 +15,27 @@
       "image": "./assets/dcet-tutorial-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/playstore.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.nikhilkurane76.testapp"
+    },
+    "web": {
+      "favicon": "./assets/playstore.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "313a5365-851e-4ba9-9734-ca779228bd0d"
+      }
     }
   }
 }

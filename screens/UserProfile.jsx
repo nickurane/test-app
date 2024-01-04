@@ -8,7 +8,7 @@ import { auth } from "../components/firebaseauth"
 
 
 
-const UserProfile=({route,navigation})=> {
+const UserProfile=({navigation,route})=> {
 
   const [emailid, setEmailid] = useState('')
   const [password, setPassword] = useState('')
@@ -25,7 +25,7 @@ const UserProfile=({route,navigation})=> {
   const [ statusphoneNumber, statusSetPhoneNumber] = useState(true)
 
 
-const {email}=route.params.data
+const {email}=route?.params?.data
 
 const db=getFirestore();
 const userRef=collection(db, "user")
@@ -106,7 +106,7 @@ const updateUserDoc = async () => {
 
 
   return (
-    <ScrollView>
+    
     <View style={styles.container} >
      
       <View style={styles.imgcontainer} >
@@ -136,9 +136,9 @@ const updateUserDoc = async () => {
           value={firstname.toUpperCase()}
          
          />
-         <TouchableOpacity onPress={()=>{statusSetFirstname?statusSetFirstname(false):statusSetFirstname(true)}}>
+         {/* <TouchableOpacity onPress={()=>{statusSetFirstname?statusSetFirstname(false):statusSetFirstname(true)}}>
           <PencilIcon size={19}  />
-         </TouchableOpacity>
+         </TouchableOpacity> */}
         
      
     
@@ -179,7 +179,7 @@ const updateUserDoc = async () => {
         </View>
         <View style={styles.saveBtnContainer}>
           <TouchableOpacity style={styles.saveBtn} onPress={()=>{updateUserDoc()}}>
-            <Text style={styles.text}>Save</Text>
+            <Text style={styles.text}>Update</Text>
           </TouchableOpacity>
         </View>
        
@@ -188,25 +188,29 @@ const updateUserDoc = async () => {
         
       </View>
     </View>
-    </ScrollView>
+  
   )
 }
 
 const styles=StyleSheet.create({
   container:{
-    flex:1,
    
-    backgroundColor:'#f2f2f2',
+    marginHorizontal:5,
+   
+   
     
     marginTop:25,
-    borderWidth:1,
+   
     marginHorizontal:15,
     paddingHorizontal:25,
     borderRadius:20,
     padding:30,
+    flex:1,
+
+    alignItems:'center'
   },
   inputContainer:{
-    flex:1,
+
     
     flexDirection:'row',
     alignItems:'center',
@@ -215,7 +219,8 @@ const styles=StyleSheet.create({
    
   },
   imgcontainer:{
-    flex:1,
+    width:'100%',
+    marginHorizontal:5,
    
   
     alignItems:'center',
@@ -227,10 +232,12 @@ const styles=StyleSheet.create({
   }
  ,
  input:{
-  height:35,
+  height:45,
   backgroundColor:'#dee1e6',
-  paddingHorizontal:15,
-  flex:1,
+  paddingHorizontal:20,
+  
+  width:'100%',
+  marginHorizontal:5,
   color:'black'
 
 
@@ -238,11 +245,14 @@ const styles=StyleSheet.create({
  saveBtn:{
   padding:7,
   color:'white',
-  backgroundColor:'green',
+  borderColor:'#6528F7',
+  borderWidth:1,
   paddingHorizontal:35,
   marginTop:15,
-  width:'100%',
-  flex:1,
+  height:40,
+  width:'50%',
+ 
+  marginHorizontal:5,
   
   justifyContent:'center',
   alignItems:'center',
@@ -250,16 +260,21 @@ const styles=StyleSheet.create({
 
  },
  saveBtnContainer:{
-  flex:1,
+  width:'100%',
+  marginHorizontal:5,
+ 
 
   justifyContent:'center',
   alignItems:'center',
  },
  text:{
-  color:'white',
+  
   fontWeight:'bold',
   fontSize:15,
-  textAlign:'center'
+  textAlign:'center',
+  color:'#6528F7',
+  fontWeight:'900',
+  
  }
 })
 

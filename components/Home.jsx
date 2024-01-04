@@ -102,10 +102,10 @@ function Home({navigation,route}) {
         // onPress={()=>{signOut()}}
         <View style={styles.container}>
         <TouchableOpacity onPress={()=>{navigation.navigate("UserProfile",{data:data})}} style={{ margin: 15}}>
-        <UserCircleIcon size={30} color="white"/>
+        <UserCircleIcon size={35} color="white"/>
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>{logOut()}} style={{ margin: 15}}>
-          <Text><Icon name="logout" size={25} color="white" /></Text>
+          <Text><Icon name="logout" size={23} color="white" /></Text>
         </TouchableOpacity>
         </View>
       )
